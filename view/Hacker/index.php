@@ -1,3 +1,7 @@
+<?php
+	require_once '../../modulosc/login/security.php';
+	verificar_session();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +36,7 @@
 	<nav class="side-navbar">
 		<div class="side-navbar-wrapper">
 			<div class="sidenav-header-inner text-center p-3"><div class="fas fa-user-circle fa-3x"></div>
-			    <h3 class="h3">Jovanny</h3><span class="text-danger">Hacker</span>	
+			    <h3 class="h3"><?php echo $_SESSION['nombre']; ?></h3><span class="text-danger">Hacker</span>	
 			</div>
 			<div class="sidenav-header-logo"><a href="index.php" class="brand-small text-center"> <strong><i class="fas fa-home"></i></strong></a></div>
 		</div>
@@ -65,7 +69,7 @@
 							<img src="../../images/logoinnovahack.png" height="20" width="100" align="center">
 						</div>
 						<ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-							<li class="nav-item"><a href="../iniciosesion/cerrarsesion.php" class="nav-link logout"> <span class="fas fa-power-off text-danger"></span> Salir</a></li><!--Se utiliza para salir del sistema-->	
+							<li class="nav-item"><a href="../../modulosc/login/cerrarsession.php" class="nav-link logout"> <span class="fas fa-power-off text-danger"></span> Salir</a></li><!--Se utiliza para salir del sistema-->	
 						</ul>
 					</div>
 				</div>

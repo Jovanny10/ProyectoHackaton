@@ -1,3 +1,7 @@
+<?php 
+require_once '../../modulosc/login/security.php';
+verificar_session();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +36,7 @@
 	<nav class="side-navbar">
 		<div class="side-navbar-wrapper">
 			<div class="sidenav-header-inner text-center p-3"><div class="fas fa-user-circle fa-3x"></div>
-			    <h3 class="h3">Jovanny</h3><span class="text-danger">Juez/Mentor</span>	
+			    <h3 class="h3"><?php echo $_SESSION['nombre']; ?></h3><span class="text-danger">Juez/Mentor</span>	
 			</div>
 			<div class="sidenav-header-logo"><a href="index.php" class="brand-small text-center"> <strong><i class="fas fa-home"></i></strong></a></div>
 		</div>
