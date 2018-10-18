@@ -56,6 +56,7 @@
                      session_start();
                      $_SESSION['activo'] = true;
                      $_SESSION['nombre'] = $row['Nombre'];
+                     $rol = $row['Rol_idRol'];
       		    	   echo $rol;
 
       		        }
