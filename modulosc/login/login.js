@@ -21,7 +21,8 @@ $(document).ready(function(){
 			if(resp == 5){
 				$('.error').hide();
 				location.href = "view/LiderProyecto/index.php";
-			}else{
+			}else
+			if(resp == 6){
 				$('.error').hide();
 				location.href = "view/Hacker/index.php";
 			}
