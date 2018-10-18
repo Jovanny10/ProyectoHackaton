@@ -82,7 +82,7 @@ verificar_session();
 						<div class="col-md-10">
 							<div class="jumbotron jumbotron-fluid">
 								<div class="container">
-									<h1 class="display-4 text-center">Bienvenid@ Miranda</h1>
+									<h1 class="display-4 text-center">Bienvenid@ <?php echo $_SESSION['nombre']; ?></h1>
 									<p class="lead">
 										Esta es tu portada principal, en donde podrás visualizar tu perfil, registro de proyecto, estado del proyecto donde podrás ver los integrantes de tu equipo, participa y gana!!!
 									</p>
