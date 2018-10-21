@@ -1,5 +1,6 @@
 <?php
 	require_once '../../modulosc/login/security.php';
+	require_once '../../modulosc/paginas.php';
 	verificar_session();
 ?>
 <!DOCTYPE html>
@@ -44,14 +45,14 @@
 			<h5 class="sidenav-heading">Menú</h5>
 			<ul id="side-main-menu" class="side-menu list-unstyled">
 				<li>
-					<a href="index.php?carga = 1" aria-expanded = "false"><i class="fas fa-user-cog"></i>Mi perfil</a>
+					<a href="index.php?carga=1" aria-expanded = "false"><i class="fas fa-user-cog"></i>Mi perfil</a>
 				</li>
 				<h5 class="sidenav-heading">PROYECTOS</h5>
 				<li>
-					<a href="index.php?carga = 2" aria-expanded = "false"><i class="fas fa-folder-open"></i>Estado del proyecto</a>
+					<a href="index.php?carga=2" aria-expanded = "false"><i class="fas fa-folder-open"></i>Registro proyecto</a>
 				</li>
 				<li>
-					<a href="index.php?cargar=4" aria-expanded="false"><i class="fas fa-bell"></i> Solicitudes <h5 style="display: inline;"><span class="badge badge-pill badge-danger">8</span></h5></a>
+					<a href="index.php?carga=3" aria-expanded="false"><i class="fas fa-bell"></i> Solicitudes <h5 style="display: inline;"><span class="badge badge-pill badge-danger">8</span></h5></a>
 				</li>
 			</ul>
 		</div>
@@ -78,18 +79,29 @@
 		<section class="dashboard-counts section-padding">
 			<div class="container-fluid">
 				<div class="right_col" role="main">
-					<div class="row justify-content-center" id="bienvenido">
-						<div class="col-md-10">
-							<div class="jumbotron jumbotron-fluid">
-								<div class="container">
-									<h1 class="display-4 text-center">Bienvenid@ <?php echo $_SESSION['nombre']; ?></h1>
-									<p class="lead">
-										Esta es tu portada principal, en donde podrás visualizar tu perfil, registro de proyecto, estado del proyecto donde podrás ver los integrantes de tu equipo, participa y gana!!!
-									</p>
+					<?php 
+						if(isset($_GET["carga"])){
+							$consulta = $_GET["carga"];
+							require_once '../../modulosc/paginas.php';
+							$principal = new paginas();
+							$principal->cargarpagina($consulta);
+						}else{
+						?>
+						<div class="row justify-content-center" id="bienvenido">
+							<div class="col-md-10">
+								<div class="jumbotron jumbotron-fluid">
+									<div class="container">
+										<h1 class="display-4 text-center">Bienvenid@ <?php echo $_SESSION['nombre']; ?></h1>
+										<p class="lead">
+											Esta es tu portada principal, en donde podrás visualizar tu perfil, registro de proyecto, estado del proyecto donde podrás ver los integrantes de tu equipo, participa y gana!!!
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+                      <?php
+					   }
+					?>
 				</div>
 			</div>
 		</section>
