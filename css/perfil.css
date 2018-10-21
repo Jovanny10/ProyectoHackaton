@@ -1,0 +1,20 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+div.card{
+	box-shadow: 2px 3px 10px #999;
+}
+div.card div.card-header div.row  button.form-control{
+	background-color: #5589e3;
+	border-radius: 5px;
+}
+/*Input*/
+form#formulario_perfil div.form-group input.form-control{
+	 border-radius: 5px;
+     border: 1px solid #39c;
+}
+
+form#formulario_perfil div.form-group p{
+	border-radius: 3px;
+}
