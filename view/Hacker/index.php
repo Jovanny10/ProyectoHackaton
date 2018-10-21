@@ -32,6 +32,7 @@
 <!--===============================================================================================-->
     <script type="text/javascript" src="../../librerias/jquery/jquery-3.3.1.min.js"></script>
 <!--===============================================================================================-->
+    <!--Libreria para hacer funcionar mi mensaje modal-->
     <script type="text/javascript" src="../../librerias/bootstrap.js"></script>
 
 </head>
