@@ -32,6 +32,8 @@
 <!--===============================================================================================-->
     <script type="text/javascript" src="../../librerias/jquery/jquery-3.3.1.min.js"></script>
 <!--===============================================================================================-->
+    <script type="text/javascript" src="../../librerias/bootstrap.js"></script>
+
 </head>
 <body>
 	<nav class="side-navbar">
@@ -70,12 +72,26 @@
 							<img src="../../images/logoinnovahack.png" height="20" width="100" align="center">
 						</div>
 						<ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-							<li class="nav-item"><a href="../../modulosc/login/cerrarsession.php" class="nav-link logout"> <span class="fas fa-power-off text-danger"></span> Salir</a></li><!--Se utiliza para salir del sistema-->	
+							<li class="nav-item"><a href="#" class="nav-link logout" data-toggle = "modal" data-target = "#cerrar"><span class="fas fa-power-off text-danger"></span> Salir</a></li><!--Se utiliza para salir del sistema-->	
 						</ul>
 					</div>
 				</div>
 			</nav>
+
 		</header>
+		<div class="modal fade" id="cerrar">
+			<div class="modal-dialog" role = "document">
+				<div class="modal-content text-center text-warning">
+					<div class="modal-body">
+						<i class="fas fa-info-circle fa-5x"></i>
+						<h1 class="modal-title text-center text-dark" id="cerrar">Estas seguro ?</h1>
+						<p class="text-center text-dark">Quieres salir del sistema y finalizar la sesión actual</p>
+						<a class="btn btn-primary" href= "../../modulosc/login/cerrarsession.php">si, Salir</a>
+						<a class="btn btn-danger text-white" data-dismiss="modal">Cancelar</a>	
+					</div>
+				</div>
+			</div>	
+		</div>
 		<section class="dashboard-counts section-padding">
 			<div class="container-fluid">
 				<div class="right_col" role="main">
