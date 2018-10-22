@@ -2,11 +2,6 @@
 	require_once '../../modulosc/login/security.php';//Clase para verificar session
 	verificar_session(); /*Es la funcion que tien security para verificar si ya iniciaron session o no para redireccionarlo al index.html*/
 	require_once '../../modulosc/paginas.php';/*Me permite utilizar switch para redireccionar paginas.*/
-	require_once '../../modulosc/hacker/perfil.php';
-	$controlador = new perfilcontrolador();
-	$id = $_SESSION['id'];
-	$resultado = $controlador->visualizar($id);
-	$row = $resultado->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
