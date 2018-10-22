@@ -1,3 +1,12 @@
+<?php 
+require_once '../../modulosc/login/security.php';//Clase para verificar session
+verificar_session();/*Es la funcion que tien security para verificar si ya iniciaron session o no para redireccionarlo al index.html*/
+require_once '../../modulosc/hacker/perfil.php';
+$controlador = new perfilcontrolador();
+$id = $_SESSION['id'];
+$resultado = $controlador->visualizar($id);
+$row = $resultado->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +25,7 @@
 					</div>
 
 					<div class="form-group">
-						<h3 class="text-center">Jovanny</h3>
+						<h3 class="text-center"><?php echo $_SESSION['nombre']; ?></h3>
 					</div>
 					<div class="row">	
 						<button class="form-control text-white">Bienvenid@</button>
@@ -33,28 +42,28 @@
 					</div>
 					<div class="form-group">
 						<label for="#" class="label-control">Nombre</label>
-						<input type="text" class="form-control" name="nombre" id="nombre" value="Ian Alejandro" >
+						<input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $row['Nombre']; ?>" >
 					</div>
 
 					<div class="form-group">
 						<label for="#" class="label-control">Apellidos</label>
-							<input type="text" class="form-control" id="Apellidos" name="Apellidos" value="Leobardo Hernández">
+							<input type="text" class="form-control" id="Apellidos" name="Apellidos" value="<?php echo $row['Apellidos']; ?>">
 
 
 					</div>
 
 					<div class="form-group">
 						<label for="#" class="label-control">E-mail</label>
-						<input type="text" class="form-control"  id="Correos" name="Correos" value="ian@gmail.com" >
+						<input type="text" class="form-control"  id="Correos" name="Correos" value="<?php echo $row['E-mail']; ?>" >
 					</div>
 
 					<div class="form-group">
 						<label for="#" class="label-control">Teléfono</label>
-						<input type="text" class="form-control" id="cel" name="cel" value="9531883793" >
+						<input type="text" class="form-control" id="cel" name="cel" value="<?php echo $row['Celular']; ?>" >
 					</div>
 					<div class="form-group">
 						<label for="#" class="label-control">Fecha Nacimiento</label>
-						<input type="date" class="form-control" id="nacimiento" name="nacimiento" value="2013-10-08">
+						<input type="date" class="form-control" id="nacimiento" name="nacimiento" value="<?php echo $row['FechaNacimiento']; ?>">
 					</div>
 					<div class="form-group text-right">
 						<p class="btn btn-primary"><i class="fas fa-edit"></i> Editar</p>

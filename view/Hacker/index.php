@@ -1,7 +1,12 @@
 <?php
-	require_once '../../modulosc/login/security.php';
-	require_once '../../modulosc/paginas.php';
-	verificar_session();
+	require_once '../../modulosc/login/security.php';//Clase para verificar session
+	verificar_session(); /*Es la funcion que tien security para verificar si ya iniciaron session o no para redireccionarlo al index.html*/
+	require_once '../../modulosc/paginas.php';/*Me permite utilizar switch para redireccionar paginas.*/
+	require_once '../../modulosc/hacker/perfil.php';
+	$controlador = new perfilcontrolador();
+	$id = $_SESSION['id'];
+	$resultado = $controlador->visualizar($id);
+	$row = $resultado->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +45,7 @@
 	<nav class="side-navbar">
 		<div class="side-navbar-wrapper">
 			<div class="sidenav-header-inner text-center p-3"><div class="fas fa-user-circle fa-3x"></div>
-			    <h3 class="h3"><?php echo $_SESSION['nombre']; ?></h3><span class="text-danger">Hacker</span>	
+			    <h3 class="h3"><?php echo $_SESSION['nombre'] ?></h3><span class="text-danger">Hacker</span>	
 			</div>
 			<div class="sidenav-header-logo"><a href="index.php" class="brand-small text-center"> <strong><i class="fas fa-home"></i></strong></a></div>
 		</div>
