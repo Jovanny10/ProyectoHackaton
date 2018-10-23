@@ -11,16 +11,9 @@
 			$sql = "SELECT * FROM comunidad WHERE id ='$id'";
 			$resultado = $conexion->query($sql);
 			return $resultado;
-			/*while ($row = mysqli_fetch_array($resultado)) {
-				echo $row['Celular'];
-			}*/
-			
-
+			$conexion->cerrar();
 		}
 
 
 	}
-
-	//$consulta = new hacker();
-	//$consulta->VisualizarPerfil('4');
 ?>

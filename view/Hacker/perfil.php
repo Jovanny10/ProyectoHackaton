@@ -1,11 +1,11 @@
 <?php 
-require_once '../../modulosc/login/security.php';//Clase para verificar session
-verificar_session();/*Es la funcion que tien security para verificar si ya iniciaron session o no para redireccionarlo al index.html*/
-require_once '../../modulosc/hacker/perfil.php';
-$controlador = new perfilcontrolador();
-$id = $_SESSION['id'];
-$resultado = $controlador->visualizar($id);
-$row = $resultado->fetch_assoc();
+	require_once '../../modulosc/login/security.php';//Clase para verificar session
+	verificar_session();/*Es la funcion que tien security para verificar si ya iniciaron session o no para redireccionarlo al index.html*/
+	require_once '../../modulosc/hacker/perfil.php';
+	$controlador = new perfilcontrolador();//Instanciamos el archivo perfil.php de view
+	$id = $_SESSION['id'];
+	$resultado = $controlador->visualizar($id);//Guardamos lo que retorna el controlador en una variable
+	$row = $resultado->fetch_assoc();//Con fetch recorremos para visualizar el resultado
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,9 +66,47 @@ $row = $resultado->fetch_assoc();
 						<input type="date" class="form-control" id="nacimiento" name="nacimiento" value="<?php echo $row['FechaNacimiento']; ?>">
 					</div>
 					<div class="form-group text-right">
-						<p class="btn btn-primary"><i class="fas fa-edit"></i> Editar</p>
+						<p class="btn btn-primary" data-toggle = "modal" data-target = "#Editar"><i class="fas fa-edit"></i> Editar</p>
 					</div>
 				  </form>
+				  <div class="modal fade" id="Editar">
+				  	<div class="modal-dialog" role = "document">
+				  		<div class="modal-content">
+				  			<div class="modal-header">
+				  				<h1 class="modal-title"><i class="fas fa-edit"></i> Editar </h1>
+				  				<button type = "button" class="close" data-dismiss = "modal" aria-label = "Close">
+				  					<span aria-hidden = "true" class="text-danger">&times;</span>
+				  				</button>
+				  			</div>
+				  			<div class="modal-body">
+				  				<div class="form-group">
+				  					<label for="#">Nombre</label>
+				  					<input type="text" class="form-control">
+				  				</div>
+				  				<div class="form-group">
+				  					<label for="#">Apellidos</label>
+				  					<input type="text" class="form-control">
+				  				</div>
+				  				<div class="form-group">
+				  					<label for="#">E-mail</label>
+				  					<input type="text" class="form-control">
+				  				</div>
+				  				<div class="form-group">
+				  					<label for="#">Teléfono</label>
+				  					<input type="text" class="form-control">
+				  				</div>
+				  				<div class="form-group">
+				  					<label for="#">Fecha Nacimiento</label>
+				  					<input type="text" class="form-control">
+				  				</div>
+				  			</div>
+				  			<div class="modal-footer">
+				  				<div class="mCerrar btn btn-default" data-dismiss = "modal">Cerrar</div>
+				  				<div class="mGuardar btn btn-primary">Guardar</div>
+				  			</div>
+				  		</div>
+				  	</div>
+				  </div>
 				</div>
 			</div>
 		</div>

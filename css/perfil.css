@@ -18,3 +18,18 @@ form#formulario_perfil div.form-group input.form-control{
 form#formulario_perfil div.form-group p{
 	border-radius: 3px;
 }
+
+/*Ventana modal*/
+div#Editar div.modal-body div.form-group input.form-control{
+	border-radius: 5px;
+	border:1px solid #39c;
+}
+
+div#Editar div.modal-footer div.mGuardar{
+	border-radius: 3px;
+}
+div#Editar div.modal-footer div.mCerrar{
+	background-color: #fff;
+	border-radius: 3px;
+	border:1px solid black;
+}
