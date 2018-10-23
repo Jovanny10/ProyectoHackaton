@@ -81,23 +81,23 @@
 				  			<div class="modal-body">
 				  				<div class="form-group">
 				  					<label for="#">Nombre</label>
-				  					<input type="text" class="form-control">
+				  					<input type="text" class="form-control" value = "<?php echo $row['Nombre']; ?>">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Apellidos</label>
-				  					<input type="text" class="form-control">
+				  					<input type="text" class="form-control" value = "<?php echo $row['Apellidos']; ?>">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">E-mail</label>
-				  					<input type="text" class="form-control">
+				  					<input type="text" class="form-control" value = "<?php echo $row['E-mail']; ?>">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Teléfono</label>
-				  					<input type="text" class="form-control">
+				  					<input type="text" class="form-control" value = "<?php echo $row['Celular']; ?>">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Fecha Nacimiento</label>
-				  					<input type="text" class="form-control">
+				  					<input type="text" class="form-control" value = "<?php echo $row['FechaNacimiento']; ?>">
 				  				</div>
 				  			</div>
 				  			<div class="modal-footer">
