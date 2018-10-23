@@ -110,13 +110,17 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		function desabilitar(){
+		$(document).ready(function(){
+			function desabilitar(){
 			document.getElementById('nombre').readOnly = true;
 			document.getElementById('Apellidos').readOnly = true;
 			document.getElementById('Correos').readOnly = true;
 			document.getElementById('cel').readOnly = true;
 			document.getElementById('nacimiento').readOnly = true;
 		}
+
+		});
+		
 	</script>	
 </body>
 </html>
