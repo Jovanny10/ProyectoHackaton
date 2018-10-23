@@ -13,6 +13,7 @@ div.card div.card-header div.row  button.form-control{
 form#formulario_perfil div.form-group input.form-control{
 	 border-radius: 5px;
      border: 1px solid #39c;
+     background-color: #fff;
 }
 
 form#formulario_perfil div.form-group p{

@@ -42,28 +42,26 @@
 					</div>
 					<div class="form-group">
 						<label for="#" class="label-control">Nombre</label>
-						<input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $row['Nombre']; ?>" >
+						<input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $row['Nombre']; ?>" onmousedown="desabilitar();" disabled>
 					</div>
 
 					<div class="form-group">
 						<label for="#" class="label-control">Apellidos</label>
-							<input type="text" class="form-control" id="Apellidos" name="Apellidos" value="<?php echo $row['Apellidos']; ?>">
-
-
+						<input type="text" class="form-control" id="Apellidos" name="Apellidos" value="<?php echo $row['Apellidos']; ?>" onmousedown = "desabilitar();" disabled>
 					</div>
 
 					<div class="form-group">
 						<label for="#" class="label-control">E-mail</label>
-						<input type="text" class="form-control"  id="Correos" name="Correos" value="<?php echo $row['E-mail']; ?>" >
+						<input type="text" class="form-control"  id="Correos" name="Correos" value="<?php echo $row['E-mail']; ?>" onmousedown = "desabilidar();" disabled>
 					</div>
 
 					<div class="form-group">
 						<label for="#" class="label-control">Teléfono</label>
-						<input type="text" class="form-control" id="cel" name="cel" value="<?php echo $row['Celular']; ?>" >
+						<input type="text" class="form-control" id="cel" name="cel" value="<?php echo $row['Celular']; ?>" onmousedown = "desabilitar();" disabled>
 					</div>
 					<div class="form-group">
 						<label for="#" class="label-control">Fecha Nacimiento</label>
-						<input type="date" class="form-control" id="nacimiento" name="nacimiento" value="<?php echo $row['FechaNacimiento']; ?>">
+						<input type="date" class="form-control" id="nacimiento" name="nacimiento" value="<?php echo $row['FechaNacimiento']; ?>" onmousedown = "desabilitar();" disabled>
 					</div>
 					<div class="form-group text-right">
 						<p class="btn btn-primary" data-toggle = "modal" data-target = "#Editar"><i class="fas fa-edit"></i> Editar</p>
@@ -97,7 +95,7 @@
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Fecha Nacimiento</label>
-				  					<input type="text" class="form-control" value = "<?php echo $row['FechaNacimiento']; ?>">
+				  					<input type="date" class="form-control" value = "<?php echo $row['FechaNacimiento']; ?>">
 				  				</div>
 				  			</div>
 				  			<div class="modal-footer">
@@ -111,6 +109,14 @@
 			</div>
 		</div>
 	</div>
-	
+	<script type="text/javascript">
+		function desabilitar(){
+			document.getElementById('nombre').readOnly = true;
+			document.getElementById('Apellidos').readOnly = true;
+			document.getElementById('Correos').readOnly = true;
+			document.getElementById('cel').readOnly = true;
+			document.getElementById('nacimiento').readOnly = true;
+		}
+	</script>	
 </body>
 </html>
