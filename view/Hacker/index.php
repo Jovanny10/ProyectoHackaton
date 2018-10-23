@@ -35,7 +35,7 @@
     <!--Libreria para hacer funcionar mi mensaje modal-->
     <script type="text/javascript" src="../../librerias/bootstrap.js"></script>
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../../css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../css/normalize.css"><!--Nos permite tener un estilo en todos los navegadores-->
 
 </head>
 <body>
