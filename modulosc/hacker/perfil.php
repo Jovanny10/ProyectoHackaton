@@ -11,5 +11,7 @@
 				$resultado = $controlador->VisualizarPerfil($id);
 				return $resultado;
 		    }
+
+		     
 	}
 ?>

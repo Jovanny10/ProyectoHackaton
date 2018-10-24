@@ -26,7 +26,7 @@ div#Editar div.modal-body div.form-group input.form-control{
 	border:1px solid #39c;
 }
 
-div#Editar div.modal-footer div.mGuardar{
+div#Editar div.modal-footer button.mGuardar{
 	border-radius: 3px;
 }
 div#Editar div.modal-footer div.mCerrar{

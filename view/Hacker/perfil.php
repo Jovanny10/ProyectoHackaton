@@ -70,38 +70,44 @@
 				  <div class="modal fade" id="Editar">
 				  	<div class="modal-dialog" role = "document">
 				  		<div class="modal-content">
+				  		 <form method="POST">
 				  			<div class="modal-header">
-				  				<h1 class="modal-title"><i class="fas fa-edit"></i> Editar </h1>
+				  				<h2 class="modal-title"><i class="fas fa-edit"></i> Editar </h2>
 				  				<button type = "button" class="close" data-dismiss = "modal" aria-label = "Close">
 				  					<span aria-hidden = "true" class="text-danger">&times;</span>
 				  				</button>
 				  			</div>
 				  			<div class="modal-body">
+				  				<input type="hidden" class="form-control" id = "id" name = "id" value = "<?php echo $row['id']; ?>">
 				  				<div class="form-group">
 				  					<label for="#">Nombre</label>
-				  					<input type="text" class="form-control" value = "<?php echo $row['Nombre']; ?>">
+				  					<input type="text" class="form-control" onkeypress="return sololetras(event)" name = "nombre1" id = "nombre1"  value = "<?php echo $row['Nombre']; ?>">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Apellidos</label>
-				  					<input type="text" class="form-control" value = "<?php echo $row['Apellidos']; ?>">
+				  					<input type="text" class="form-control" onkeypress="return sololetras(event)" name = "apellidos1" id="apellidos1" value = "<?php echo $row['Apellidos']; ?>">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">E-mail</label>
-				  					<input type="text" class="form-control" value = "<?php echo $row['E-mail']; ?>">
+				  					<input type="text" class="form-control" name = "email1" id = "email1" value = "<?php echo $row['E-mail']; ?>">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Teléfono</label>
-				  					<input type="text" class="form-control" value = "<?php echo $row['Celular']; ?>">
+				  					<input type="text" class="form-control" name = "telefono" id = "telefono" value = "<?php echo $row['Celular']; ?>">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Fecha Nacimiento</label>
-				  					<input type="date" class="form-control" value = "<?php echo $row['FechaNacimiento']; ?>">
+				  					<input type="date" class="form-control" name = "fecha1" id = "fecha1" value = "<?php echo $row['FechaNacimiento']; ?>">
+				  				</div>
+				  				<div class="informacion">
+				  					
 				  				</div>
 				  			</div>
 				  			<div class="modal-footer">
-				  				<div class="mCerrar btn btn-default" data-dismiss = "modal">Cerrar</div>
-				  				<div class="mGuardar btn btn-primary">Guardar</div>
+				  				<div class="mCerrar btn btn-default" data-dismiss = "modal" href = "perfil.php">Cerrar</div>
+				  				<button class="mGuardar btn btn-primary" name="submit" id="Aceptar" type="submit">Guardar</button>
 				  			</div>
+				  		    </form>	
 				  		</div>
 				  	</div>
 				  </div>
@@ -110,17 +116,24 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		$(document).ready(function(){
-			function desabilitar(){
-			document.getElementById('nombre').readOnly = true;
-			document.getElementById('Apellidos').readOnly = true;
-			document.getElementById('Correos').readOnly = true;
-			document.getElementById('cel').readOnly = true;
-			document.getElementById('nacimiento').readOnly = true;
-		}
+		 function sololetras(e) {
+		      key = e.keyCode || e.which;
+		      teclado = String.fromCharCode(key).toLowerCase();
+		      letras = "abcdefghijklmnñopqrstuvwxyzáéíóú ";
+		      especiales = "8-9-32-37-38-46-164";
+		      teclado_especial = false;
+		      for (var i in especiales) {
+		          if (key == especiales[i]) {
+		              teclado_especial = true;
+		              break;
+		          }
+		      }
+		      if (letras.indexOf(teclado) == -1 && !teclado_especial) {
+		          return false;
+		      }
+         }
 
-		});
-		
-	</script>	
+	</script>
+	<script type="text/javascript" src="../../modulosc/hacker/Editarperfil.js"></script>	
 </body>
 </html>
