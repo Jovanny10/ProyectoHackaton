@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	/*Nos permite  validar los campos del formulario*/
 	 $('form').submit(function(e){
 	 	var datos = $(this).serialize();
 	 	e.preventDefault();
@@ -14,4 +15,5 @@ $(document).ready(function(){
 			$('.informacion').html(resp);
 		})
 	 })
+	 /**/
 })

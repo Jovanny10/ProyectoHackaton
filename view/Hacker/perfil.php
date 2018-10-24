@@ -104,7 +104,7 @@
 				  				</div>
 				  			</div>
 				  			<div class="modal-footer">
-				  				<div class="mCerrar btn btn-default" data-dismiss = "modal" href = "perfil.php">Cerrar</div>
+				  				<div class="mCerrar btn btn-default" data-dismiss = "modal">Cerrar</div>
 				  				<button class="mGuardar btn btn-primary" name="submit" id="Aceptar" type="submit">Guardar</button>
 				  			</div>
 				  		    </form>	
@@ -132,7 +132,6 @@
 		          return false;
 		      }
          }
-
 	</script>
 	<script type="text/javascript" src="../../modulosc/hacker/Editarperfil.js"></script>	
 </body>
