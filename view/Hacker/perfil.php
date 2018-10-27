@@ -84,19 +84,19 @@
 				  				<input type="hidden" class="form-control" id = "id" name = "id" value = "<?php echo $id ?>">
 				  				<div class="form-group">
 				  					<label for="#">Nombre</label>
-				  					<input type="text" class="form-control" onkeypress="return sololetras(event)" name = "nombre1" id = "nombre1"  value = "">
+				  					<input type="text" class="form-control" name = "nombre1" id = "nombre1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Apellidos</label>
-				  					<input type="text" class="form-control" onkeypress="return sololetras(event)" name = "apellidos1" id="apellidos1" value = "">
+				  					<input type="text" class="form-control" name = "apellidos1" id="apellidos1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">E-mail</label>
-				  					<input type="text" class="form-control" name = "email1" id = "email1" value = "">
+				  					<input type="text" class="form-control" name = "email1" id = "email1" onpaste = "alert('No puedes pegar'); return false">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Teléfono</label>
-				  					<input type="text" class="form-control" name = "telefono" id = "telefono" value = "">
+				  					<input type="text" class="form-control" name = "telefono" id = "telefono" onpaste = "alert('No puedes pegar');return false">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Fecha Nacimiento</label>
