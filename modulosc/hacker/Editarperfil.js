@@ -1,6 +1,9 @@
-$(document).ready(function(){
+	$(document).ready(function(){
+		validarPerfil();
+	})
 	/*Nos permite  validar los campos del formulario*/
-	 $('form').submit(function(e){
+	function validarPerfil(){
+		$('form').submit(function(e){
 	 	var datos = $(this).serialize();
 	 	e.preventDefault();
 	 	$.ajax({
@@ -15,5 +18,5 @@ $(document).ready(function(){
 			$('.informacion').html(resp);
 		})
 	 })
-	 /**/
-})
+
+	}

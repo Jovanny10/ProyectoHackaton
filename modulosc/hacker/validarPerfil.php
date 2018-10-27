@@ -39,16 +39,17 @@
              		 require_once '../../classm/hacker.php';
     				     $guardar = new hacker();
           			 $id = $_POST['id'];
-          			 $nombre = $_POST['nombre1'];
-          			 $apellidos = $_POST['apellidos1'];
-          			 $email = $_POST['email1'];
+          			 $nombre =utf8_encode($_POST['nombre1']);
+          			 $apellidos = utf8_encode($_POST['apellidos1']);
+          			 $email = utf8_encode($_POST['email1']);
           			 $telefono =$_POST['telefono'];
           			 $fecha = $_POST['fecha1'];
           			 $resultado = $guardar->EditarPerfil($id,$nombre,$apellidos,$email,$telefono,$fecha);
       					 if($resultado){
         						  ?>
                          <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                               <strong> Actualizado Correctamente</strong>
+                               <strong><i class="fas fa-check"></i> Actualizado Correctamente</strong>
+
                          </div>
         	            <?php
       					 }

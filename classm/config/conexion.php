@@ -12,7 +12,8 @@
 	   	
 	   	function __construct()
 	   	{
-	   		 parent::__construct($this->HOST, $this->USER, $this->PASS, $this->BASE);
+	   		
+	   		$conexion =  parent::__construct($this->HOST, $this->USER, $this->PASS, $this->BASE);
 	   	}
 	   	function cerrar(){
 	   		$this->conexion->close();

@@ -133,6 +133,6 @@
 		      }
          }
 	</script>
-	<script type="text/javascript" src="../../modulosc/hacker/Editarperfil.js"></script>	
+	<script type="text/javascript" src="../../modulosc/hacker/Editarperfil.js"></script>
 </body>
 </html>
