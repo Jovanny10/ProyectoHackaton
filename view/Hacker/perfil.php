@@ -84,7 +84,7 @@
 				  				<input type="hidden" class="form-control" id = "id" name = "id" value = "<?php echo $id ?>">
 				  				<div class="form-group">
 				  					<label for="#">Nombre</label>
-				  					<input type="text" class="form-control" onkeypress="return sololetras(event)" name = "nombre" id = "nombre1"  value = "">
+				  					<input type="text" class="form-control" onkeypress="return sololetras(event)" name = "nombre1" id = "nombre1"  value = "">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Apellidos</label>
@@ -102,6 +102,8 @@
 				  					<label for="#">Fecha Nacimiento</label>
 				  					<input type="date" class="form-control" name = "fecha1" id = "fecha1" value = "">
 				  				</div>
+				  				<div class="informacion">
+				  			    </div>
 				  			</div>
 				  			<div class="modal-footer">
 				  				<div class="mCerrar btn btn-default" data-dismiss = "modal">Cerrar</div>
@@ -134,5 +136,6 @@
          }
 	</script>
 	<script type="text/javascript" src="../../modulosc/hacker/visualizar.js"></script>
+	<script type="text/javascript" src="../../modulosc/hacker/Editarperfil.js"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@
 
 		public function EditarPerfil($id,$nombre,$apellidos,$email,$cel,$fecha){
 			$conexion = new Conexion();
-			$sql = "UPDATE `comunidad` SET `Nombre`='$nombre',`Apellidos`='$apellidos',`E-mail`='$email',`Celular`='$cel',`FechaNacimiento`='$fecha' WHERE id = '$id'";
+			$sql = "UPDATE `comunidad` SET `Nombre`='$nombre',`Apellidos`='$apellidos',`mail`='$email',`Celular`='$cel',`FechaNacimiento`='$fecha' WHERE id = '$id'";
 			$resultado = $conexion->query($sql);
 			return $resultado;
 			$conexion->cerrar();

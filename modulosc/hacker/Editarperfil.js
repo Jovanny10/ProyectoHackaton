@@ -16,6 +16,7 @@
 		})
 		.done(function(resp){
 			$('.informacion').html(resp);
+			visualizar(); 
 		})
 	 })
 

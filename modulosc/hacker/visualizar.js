@@ -14,7 +14,6 @@ function visualizar(){
 
 	.done(function(resp){
 		var objeto = JSON.parse(resp);
-		    console.log(objeto);
 			$('#nombre').val(objeto.Nombre);
 			$('#nombre1').val(objeto.Nombre);
 			$('#Apellidos').val(objeto.Apellidos);

@@ -39,9 +39,9 @@
              		 require_once '../../classm/hacker.php';
     				     $guardar = new hacker();
           			 $id = $_POST['id'];
-          			 $nombre =utf8_encode($_POST['nombre1']);
-          			 $apellidos = utf8_encode($_POST['apellidos1']);
-          			 $email = utf8_encode($_POST['email1']);
+          			 $nombre = ucwords($_POST['nombre1']);
+          			 $apellidos = ucwords($_POST['apellidos1']);
+          			 $email = strtolower($_POST['email1']);
           			 $telefono =$_POST['telefono'];
           			 $fecha = $_POST['fecha1'];
           			 $resultado = $guardar->EditarPerfil($id,$nombre,$apellidos,$email,$telefono,$fecha);
@@ -52,7 +52,14 @@
 
                          </div>
         	            <?php
-      					 }
+      					 }else{
+                      ?>
+                         <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                               <strong> Error al registrar</strong>
+                         </div>
+                      <?php
+
+                 }
          	}
 
 
