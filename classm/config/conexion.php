@@ -9,15 +9,14 @@
 	    private $USER = "root";
 	    private $PASS = "";
 	    private $BASE = "inovahack";
+	    public  $conexion;
 	   	
 	   	function __construct()
 	   	{
 	   		
-	   		$conexion =  parent::__construct($this->HOST, $this->USER, $this->PASS, $this->BASE);
+	   		$this->conexion =  parent::__construct($this->HOST, $this->USER, $this->PASS, $this->BASE);
 	   	}
-	   	function cerrar(){
-	   		$this->conexion->close();
-	   	}
+	 
 
 
    }

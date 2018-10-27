@@ -10,8 +10,9 @@
 			$conexion = new Conexion(); 
 			$sql = "SELECT * FROM comunidad WHERE id ='$id'";
 			$resultado = $conexion->query($sql);
-			return $resultado;
-			$conexion->cerrar();
+			$array = $resultado->fetch_assoc();
+			$json = json_encode($array);
+			return $json;
 		}
 
 		public function EditarPerfil($id,$nombre,$apellidos,$email,$cel,$fecha){

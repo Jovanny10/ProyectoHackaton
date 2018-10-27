@@ -29,7 +29,7 @@
       	function busqueda($email,$contra){
 	      		    require_once '../../classm/config/conexion.php';
 	      		    $cone = new Conexion();
-	      		    $contenido = $cone->query("SELECT `id`,`Nombre`,`Apellidos`,`E-mail`,`Celular`,`Rol_idRol` FROM `comunidad` WHERE `E-mail`='$email' and `psw` = '$contra'");
+	      		    $contenido = $cone->query("SELECT `id`,`Nombre`,`Apellidos`,`mail`,`Celular`,`Rol_idRol` FROM `comunidad` WHERE `mail`='$email' and `psw` = '$contra'");
       		    if($contenido->num_rows >0){
       		    	while($row = mysqli_fetch_array($contenido)){
                      session_start();

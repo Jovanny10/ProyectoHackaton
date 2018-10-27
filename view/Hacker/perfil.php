@@ -1,11 +1,13 @@
 <?php 
 	require_once '../../modulosc/login/security.php';//Clase para verificar session
 	verificar_session();/*Es la funcion que tien security para verificar si ya iniciaron session o no para redireccionarlo al index.html*/
-	require_once '../../modulosc/hacker/perfil.php';
+	/*require_once '../../modulosc/hacker/perfil.php';
 	$controlador = new perfilcontrolador();//Instanciamos el archivo perfil.php de view
 	$id = $_SESSION['id'];
 	$resultado = $controlador->visualizar($id);//Guardamos lo que retorna el controlador en una variable
-	$row = $resultado->fetch_assoc();//Con fetch recorremos para visualizar el resultado
+	$row = $resultado->fetch_assoc();//Con fetch recorremos para visualizar el resultado*/
+	$id = $_SESSION['id'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,27 +44,28 @@
 					</div>
 					<div class="form-group">
 						<label for="#" class="label-control">Nombre</label>
-						<input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $row['Nombre']; ?>" onmousedown="desabilitar();" disabled>
+						<input type="text" class="form-control" name="nombre" id="nombre" value="" onmousedown="desabilitar();" disabled>
 					</div>
 
 					<div class="form-group">
 						<label for="#" class="label-control">Apellidos</label>
-						<input type="text" class="form-control" id="Apellidos" name="Apellidos" value="<?php echo $row['Apellidos']; ?>" onmousedown = "desabilitar();" disabled>
+						<input type="text" class="form-control" id="Apellidos" name="Apellidos" value="" onmousedown = "desabilitar();" disabled>
 					</div>
 
 					<div class="form-group">
 						<label for="#" class="label-control">E-mail</label>
-						<input type="text" class="form-control"  id="Correos" name="Correos" value="<?php echo $row['E-mail']; ?>" onmousedown = "desabilidar();" disabled>
+						<input type="text" class="form-control"  id="Correos" name="Correos" value="" onmousedown = "desabilidar();" disabled>
 					</div>
 
 					<div class="form-group">
 						<label for="#" class="label-control">Teléfono</label>
-						<input type="text" class="form-control" id="cel" name="cel" value="<?php echo $row['Celular']; ?>" onmousedown = "desabilitar();" disabled>
+						<input type="text" class="form-control" id="cel" name="cel" value="" onmousedown = "desabilitar();" disabled>
 					</div>
 					<div class="form-group">
 						<label for="#" class="label-control">Fecha Nacimiento</label>
-						<input type="date" class="form-control" id="nacimiento" name="nacimiento" value="<?php echo $row['FechaNacimiento']; ?>" onmousedown = "desabilitar();" disabled>
+						<input type="date" class="form-control" id="nacimiento" name="nacimiento" value="" onmousedown = "desabilitar();" disabled>
 					</div>
+					 
 					<div class="form-group text-right">
 						<p class="btn btn-primary" data-toggle = "modal" data-target = "#Editar"><i class="fas fa-edit"></i> Editar</p>
 					</div>
@@ -78,29 +81,26 @@
 				  				</button>
 				  			</div>
 				  			<div class="modal-body">
-				  				<input type="hidden" class="form-control" id = "id" name = "id" value = "<?php echo $row['id']; ?>">
+				  				<input type="hidden" class="form-control" id = "id" name = "id" value = "<?php echo $id ?>">
 				  				<div class="form-group">
 				  					<label for="#">Nombre</label>
-				  					<input type="text" class="form-control" onkeypress="return sololetras(event)" name = "nombre1" id = "nombre1"  value = "<?php echo $row['Nombre']; ?>">
+				  					<input type="text" class="form-control" onkeypress="return sololetras(event)" name = "nombre" id = "nombre1"  value = "">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Apellidos</label>
-				  					<input type="text" class="form-control" onkeypress="return sololetras(event)" name = "apellidos1" id="apellidos1" value = "<?php echo $row['Apellidos']; ?>">
+				  					<input type="text" class="form-control" onkeypress="return sololetras(event)" name = "apellidos1" id="apellidos1" value = "">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">E-mail</label>
-				  					<input type="text" class="form-control" name = "email1" id = "email1" value = "<?php echo $row['E-mail']; ?>">
+				  					<input type="text" class="form-control" name = "email1" id = "email1" value = "">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Teléfono</label>
-				  					<input type="text" class="form-control" name = "telefono" id = "telefono" value = "<?php echo $row['Celular']; ?>">
+				  					<input type="text" class="form-control" name = "telefono" id = "telefono" value = "">
 				  				</div>
 				  				<div class="form-group">
 				  					<label for="#">Fecha Nacimiento</label>
-				  					<input type="date" class="form-control" name = "fecha1" id = "fecha1" value = "<?php echo $row['FechaNacimiento']; ?>">
-				  				</div>
-				  				<div class="informacion">
-				  					
+				  					<input type="date" class="form-control" name = "fecha1" id = "fecha1" value = "">
 				  				</div>
 				  			</div>
 				  			<div class="modal-footer">
@@ -133,6 +133,6 @@
 		      }
          }
 	</script>
-	<script type="text/javascript" src="../../modulosc/hacker/Editarperfil.js"></script>
+	<script type="text/javascript" src="../../modulosc/hacker/visualizar.js"></script>
 </body>
 </html>
