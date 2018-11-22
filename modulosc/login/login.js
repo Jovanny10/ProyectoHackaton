@@ -12,7 +12,7 @@ $(document).ready(function(){
 				$('.fas').css('display','inline');
 			}
 		})//CABACERA DEL METODO AJAX, EL QUE SE VA A EJECUTAR PRIMERO
-		.done(function(resp){//Cuando lo que nos devuelva sea cierto, true, cuando se recibe la respuesta del servidor
+		.done(function(resp){//Cuando lo que nokbs devuelva sea cierto, true, cuando se recibe la respuesta del servidor
 			$('.error').html(resp);
 			if(resp == 3){
 				$('.error').hide();
@@ -27,7 +27,8 @@ $(document).ready(function(){
 				location.href = "view/Hacker/index.php";
 			}
 		})
-		.always(function(){//Se ejecuta siempre,cuando se termina el request,se utiliza cuando hacemos una busqueda podemos utilizar un icono recargando
+		.always(function(){//Se ejecuta siempre,cuando se termina el request,se utiliza cuando hacemos
+		// una busqueda podemos utilizar un icono recargando
 			//antes de que se haga el request se muestra el icono y en always se esconde
 			setTimeout(function(){
 				$('.fas').hide();

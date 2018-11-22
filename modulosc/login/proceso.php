@@ -44,8 +44,6 @@
       		    }else{
       		    	 echo "Usuario y/o contraseña incorrectos !";
       		    }
-      		    
-
       	}
       }
 
