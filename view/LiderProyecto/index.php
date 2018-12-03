@@ -1,6 +1,7 @@
 <?php 
 require_once '../../modulosc/login/security.php';
 verificar_session();
+require_once '../../modulosc/paginas.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,14 +45,14 @@ verificar_session();
 			<h5 class="sidenav-heading">Menú</h5>
 			<ul id="side-main-menu" class="side-menu list-unstyled">
 				<li>
-					<a href="index.php?carga = 5" aria-expanded = "false"><i class="fas fa-user-cog"></i>Mi perfil</a>
+					<a href="index.php?carga=4" aria-expanded = "false"><i class="fas fa-user-cog"></i>Mi perfil</a>
 				</li>
 				<h5 class="sidenav-heading">PROYECTOS</h5>
 				<li>
-					<a href="index.php?carga = 6" aria-expanded = "false"><i class="fas fa-folder-open"></i>Estado del proyecto</a>
+					<a href="index.php?carga=5" aria-expanded = "false"><i class="fas fa-folder-open"></i>Estado del proyecto</a>
 				</li>
 				<li>
-					<a href="index.php?cargar=4" aria-expanded="false"><i class="fas fa-bell"></i> Solicitudes <h5 style="display: inline;"><span class="badge badge-pill badge-danger">8</span></h5></a>
+					<a href="index.php?carga=6" aria-expanded="false"><i class="fas fa-bell"></i> Solicitudes <h5 style="display: inline;"><span class="badge badge-pill badge-danger">8</span></h5></a>
 				</li>
 			</ul>
 		</div>
@@ -78,6 +79,14 @@ verificar_session();
 		<section class="dashboard-counts section-padding">
 			<div class="container-fluid">
 				<div class="right_col" role="main">
+					<?php 
+						if(isset($_GET["carga"])){
+							$consulta = $_GET["carga"];
+							require_once '../../modulosc/paginas.php';
+							$principal = new paginas();
+							$principal->cargarpagina($consulta);
+						}else{
+					?>
 					<div class="row justify-content-center" id="bienvenido">
 						<div class="col-md-10">
 							<div class="jumbotron jumbotron-fluid">
@@ -90,6 +99,9 @@ verificar_session();
 							</div>
 						</div>
 					</div>
+					<?php 
+						}
+					?>
 				</div>
 			</div>
 		</section>

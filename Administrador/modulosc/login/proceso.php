@@ -27,6 +27,7 @@
   	public function busqueda($email,$contra){
   		require_once '../../classm/config/conexion.php';
   		$cone = new Conexion();
+      
   	}
 
 
