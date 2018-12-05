@@ -60,12 +60,58 @@
 							<p class="btn btn-primary" data-toggle = "modal" data-target="#Editar"><i class="fas fa-edit"></i> Editar</p>
 						</div>
 					</form>
+					<div class="modal fade" id="Editar">
+						<div class="modal-dialog" role = document>
+							<div class="modal-content">
+								<form method="POST">
+									<div class="modal-header">
+										<h2 class="modal-title"><i class="fas fa-edit"></i> Editar</h2>
+										<button type="button" class="close" data-dismiss = "modal" aria-label = "Close">
+											<span aria-hidden = "true" class = "text-danger">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<input type="hidden" class="form-control" id="id" name="id" value="<?php echo $id ?>">
+										<div class="form-group">
+											<label for="#">Nombre</label>
+											<input type="text" class="form-control" name="nombre1" id = "nombre1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
+										</div>
+										<div class="form-group">
+											<label for="#">Apellidos</label>
+											<input type="text" class="form-control" name="apellidos1" id="apellidos1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
+										</div>
+										<div class="form-group">
+											<label for="#">E-mail</label>
+											<input type="text" class="form-control" name="email1" id="email1" onpaste = "alert('No puedes pegar'); return false">
+										</div>
+										<div class="form-group">
+											<label for="#">Teléfono</label>
+											<input type="text" class="form-control" name="telefono" id="telefono" onpaste = "alert('No puedes pegar');return false">
+										</div>
+										<div class="form-group">
+											<label for="#">Fecha Nacimiento</label>
+											<input type="date" class="form-control" name = "fecha1" id="fecha1" value="">
+										</div>
+										<div class="informacion">
+											
+										</div>
+									</div>
+									<div class="modal-footer">
+										<div class="mCerrar btn btn-default" data-dismiss = "modal">Cerrar</div>
+										<button class="mGuardar btn btn-primary" name="submit" id="Aceptar" type="submit">Guardar</button>
+									</div>
+
+								</form>
+							</div>
+						</div>
+						
+					</div>
 
 				</div>
 				
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="../../modulosc/hacker/visualizar.js"></script>
+	<script type="text/javascript" src="../../modulosc/liderproyecto/visualizar.js"></script>
 </body>
 </html>
