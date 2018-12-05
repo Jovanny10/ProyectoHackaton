@@ -5,6 +5,6 @@
 	<title>Solicitudes</title>
 </head>
 <body>
-	<h1>Mis solicitudes</h1>
+	<h1>Mis solicitudes Lider Proyecto</h1>
 </body>
 </html>
