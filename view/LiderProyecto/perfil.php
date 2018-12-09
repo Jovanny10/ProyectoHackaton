@@ -148,12 +148,13 @@
 												<input type="text" class="form-control" name="psw1" id="psw1">
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-lg-5">
-												<div class="informacion">
-											
-												</div>
+										<div class="row justify-content-center">
+											<div class="col-mg-5">
+												 <div class="informacion">
+											 	
+												 </div>
 											</div>
+											
 										</div>
 									</div>
 									<div class="modal-footer">
