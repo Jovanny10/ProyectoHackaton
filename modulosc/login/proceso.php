@@ -20,7 +20,7 @@
       			}else
       			if(isset($_POST['email']) and isset($_POST['password'])){
       				$usuario = $_POST['email'];
-      				$Contraseña = md5($_POST['password']);
+      				$Contraseña = base64_encode(($_POST['password']));
       				$this->busqueda($usuario,$Contraseña);
       			}
       		}
@@ -29,12 +29,12 @@
       	function busqueda($email,$contra){
 	      		    require_once '../../classm/config/conexion.php';
 	      		    $cone = new Conexion();
-	      		    $contenido = $cone->query("SELECT `id`,`Nombre`,`Apellidos`,`mail`,`Celular`,`Rol_idRol` FROM `comunidad` WHERE `mail`='$email' and `psw` = '$contra'");
+	      		    $contenido = $cone->query("SELECT idPersona,Nombre,App,Apm AS Apellidos, Rol_idRol FROM participantes WHERE Email = '$email' and Psw = '$contra' ");
       		    if($contenido->num_rows >0){
       		    	while($row = mysqli_fetch_array($contenido)){
                      session_start();
                      $_SESSION['activo'] = true;
-                     $_SESSION['id'] = $row['id'];
+                     $_SESSION['id'] = $row['idPersona'];
                      $_SESSION['nombre'] = $row['Nombre'];
                      $rol = $row['Rol_idRol'];
       		    	   echo $rol;

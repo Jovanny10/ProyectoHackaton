@@ -15,14 +15,9 @@ function visualizar(){
 	.done(function(resp){
 		var objeto = JSON.parse(resp);
 			$('#nombre').val(objeto.Nombre);
-			$('#nombre1').val(objeto.Nombre);
-			$('#Apellidos').val(objeto.Apellidos);
-			$('#apellidos1').val(objeto.Apellidos);
-			$('#Correos').val(objeto.mail);
-			$('#email1').val(objeto.mail);
+			$('#Apellidos').val(objeto.App);
+			$('#Correos').val(objeto.Email);
 			$('#cel').val(objeto.Celular);
-			$('#telefono').val(objeto.Celular);
-			$('#nacimiento').val(objeto.FechaNacimiento);
-			$('#fecha1').val(objeto.FechaNacimiento);
+			$('#nacimiento').val(objeto.FNacimiento);
 	})
 }

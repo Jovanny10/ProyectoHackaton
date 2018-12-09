@@ -18,11 +18,11 @@ $(document).ready(function(){
 				$('.error').hide();
 				location.href = "view/Juez/index.php";
 			}else
-			if(resp == 5){
+			if(resp == 2){
 				$('.error').hide();
 				location.href = "view/LiderProyecto/index.php";
 			}else
-			if(resp == 6){
+			if(resp == 1){
 				$('.error').hide();
 				location.href = "view/Hacker/index.php";
 			}

@@ -26,6 +26,11 @@ div#Editar div.modal-body div.form-group input.form-control{
 	border:1px solid #39c;
 }
 
+div#Editar div.modal-body div.row div.col-lg-4 input.form-control{
+	border-radius: 5px;
+	border:1px solid #39c;
+
+}
 div#Editar div.modal-footer button.mGuardar{
 	border-radius: 3px;
 }

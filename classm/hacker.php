@@ -8,7 +8,7 @@
 		
 		public function VisualizarPerfil($id){
 			$conexion = new Conexion(); 
-			$sql = "SELECT * FROM comunidad WHERE id ='$id'";
+			$sql = "SELECT * FROM participantes WHERE idPersona ='$id'";
 			$resultado = $conexion->query($sql);
 			$array = $resultado->fetch_assoc();
 			$json = json_encode($array);
@@ -17,7 +17,7 @@
 
 		public function EditarPerfil($id,$nombre,$apellidos,$email,$cel,$fecha){
 			$conexion = new Conexion();
-			$sql = "UPDATE `comunidad` SET `Nombre`='$nombre',`Apellidos`='$apellidos',`mail`='$email',`Celular`='$cel',`FechaNacimiento`='$fecha' WHERE id = '$id'";
+			$sql = "UPDATE `participantes` SET `Nombre`='$nombre',`App`='$apellidos',`Email`='$email',`Celular`='$cel',`FNacimiento`='$fecha' WHERE idPersona = '$id'";
 			$resultado = $conexion->query($sql);
 			return $resultado;
 			$conexion->cerrar();
