@@ -34,6 +34,7 @@ function visualizar(){
 		$('#hobbie1').val(objeto.Hobbie);
 		$('#playera1').val(objeto.TallaPlayera_idTallaPlayer);
 		$('#psw1').val(objeto.Psw);
+		$('#idInstitucion').val(objeto.Institucion_idInstitucion);
 
 
 	})

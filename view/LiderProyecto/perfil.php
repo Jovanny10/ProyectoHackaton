@@ -57,7 +57,7 @@
 							<input type="text" class="form-control" id="nacimiento" name="nacimiento" value="" onmousedown="desabilitar();" disabled="">
 						</div>
 						<div class="form-group text-right">
-							<p class="btn btn-primary" data-toggle = "modal" data-target="#Editar"><i class="fas fa-edit"></i> Editar</p>
+							<p class="btn btn-primary" data-toggle = "modal" data-target="#Editar"><i class="fas fa-ellipsis-h"></i> Detalles</p>
 						</div>
 					</form>
 					<div class="modal fade" id="Editar">
@@ -103,15 +103,54 @@
 										<div class="row">
 											<div class="col-lg-4">
 												<label for="#">Institución</label>
-												<input type="text" class="form-control" name="email1" id="email1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
+												<select id="institucion" class="form-control" name="institucion">
+													<?php 
+														include_once '../../classm/config/conexion.php';
+														$conexion  = new Conexion();
+														$sql = "SELECT `idInstitucion`, `Institucion` FROM `institucion`";
+														$resultado = $conexion->query($sql);
+														while($row = mysqli_fetch_array($resultado)){
+															?>
+														 	<option value="<?php echo $row['institucion']; ?>"><?php echo utf8_encode($row['Institucion']); ?></option>
+															<?php
+														}
+													?>
+												</select>
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Carrera</label>
-												<input type="text" class="form-control" name="telefono" id="telefono" onpaste = "alert('No puedes pegar');return false">
+												<select id="carrera" class="form-control" name="carrera">
+													<?php 
+														include_once '../../classm/config/conexion.php';
+														$conexion = new Conexion();
+														$sql = "SELECT * FROM `carrera`";
+														$resultado = $conexion->query($sql);
+														while($row = mysqli_fetch_array($resultado)){
+															?>
+															<option value="<?php echo $row['idCarrera'];?>"><?php echo utf8_encode($row['Carrera']); ?></option>
+															<?php
+														}
+
+													?>
+												</select>
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Sexo</label>
-												<input type="text" class="form-control" name="fecha1" id="fecha1">
+												<select id="sexo" name="sexo" class="form-control">
+													<?php 
+														include_once '../../classm/config/conexion.php';
+														$conexion = new Conexion();
+														$sql = "SELECT * FROM `sexo`";
+														$resultado = $conexion->query($sql);
+														while($row = mysqli_fetch_array($resultado)){
+															?>
+															<option value="<?php echo $row['idSexo']; ?>"><?php echo utf8_encode($row['Sexo']); ?></option>
+															<?php
+														}
+
+
+													?>
+												</select>
 											</div>
 										</div>
 										<div class="row">
@@ -135,11 +174,15 @@
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Playera</label>
-												<input type="text" class="form-control" name="twitter1" id="twitter1" onpaste = "alert('No puedes pegar');return false">
+												<select id="playera" name="playera" class="form-control">
+													<option selected="" value="0"> -- Seleccionar -- </option>
+												</select>
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Rol</label>
-												<input type="text" class="form-control" name="habilidad1" id="habilidad1">
+												<select id="rol" name="rol" class="form-control">
+													<option selected="" value="0"> -- Seleccionar -- </option>
+												</select>
 											</div>
 										</div>
 										<div class="row">
