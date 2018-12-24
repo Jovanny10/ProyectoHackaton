@@ -8,7 +8,7 @@
 		public function cargarpagina($pagina){
 			switch ($pagina) {
 				case '1':
-					include_once 'perfil.php';
+					require_once 'perfilHacker.php';
 					break;
 				case '2':
 				    include_once 'registroproyecto.php';
@@ -29,7 +29,6 @@
 					break;
 				
 				default:
-					
 					break;
 			}
 		}

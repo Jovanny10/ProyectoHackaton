@@ -7,7 +7,7 @@
      	private $HOST = "localhost";
      	private $USER = "root";
      	private $PASS = "";
-     	private $BASE = "inovahack";
+     	private $BASE = "hackaton1";
      	public  $conexion;
 
      	function __construct()

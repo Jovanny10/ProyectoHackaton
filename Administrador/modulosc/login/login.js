@@ -14,8 +14,11 @@ $(function(){
 		})//Cabecera del metodo AJAX, el que se va a ejecutar primero
 		.done(function(resp){
 			$('.error').html(resp);
+			if(resp == 1){
+				$('.error').hide();
+				location.href = "view/index.php";
+			}
 		})
-
 		.always(function(){//Se ejecuta siempre, cuando se termina el request, se utiliza cuando hacemos
 			//una búsqueda podemos utilizar un icono recargando
 			//Antes de que se haga el request se muestra el icono y el always lo esconde

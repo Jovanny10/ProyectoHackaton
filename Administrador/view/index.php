@@ -1,3 +1,7 @@
+<?php 
+	require_once '../modulosc/login/security.php';//Clase para verificar si está iniciada la session o no
+	verificar_session();//Es una funcion de la clase security para verificar si ya iniciaron session o no para redireccionarlo al index
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,7 @@
 	<!--Custon Scrollbar-->
 	<link rel="stylesheet" href="../../librerias/malihu/jquery.mCustomScrollbar.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="../../css/style.default.css" id="theme-stylesheet">
+	<link rel="stylesheet" href="../../css/style.Administrador.css" id="theme-stylesheet">
 <!--===============================================================================================-->
 	<!--Font awesome CSS-->
 	<link rel="stylesheet" type="text/css" href="../../librerias/fontawesome/css/fontawesome.min.css">
@@ -56,10 +60,8 @@
             	</a>
             </li>
             <li>
-            	<a href="#" aria-expanded = "false">
-            		<i class="fas fa-mail-bulk"></i>Solicitud Juez
-            	</a>
-            </li>
+				<a href="index.php?carga=6" aria-expanded="false"><i class="fas fa-bell"></i> Solicitud Juez <h5 style="display: inline;"><span class="badge badge-pill badge-danger">8</span></h5></a>
+			</li>
             <h5 class="sidenav-heading">CONSULTAS</h5>
 			<li><a href="#Monitoreo" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-search"></i>Participantes</a>
               <ul id="Monitoreo" class="collapse list-unstyled ">
@@ -86,22 +88,45 @@
 				<div class="container-fluid">
 					<div class="navbar-holder d-flex align-items-center justify-content-between">
 						<div class="navbar-header">
-							<a href="#" id="toggle-btn" class="menu-btn">
+							<a href="#" id="toggle-btn" class="menu-btn"><!--Aquí se agrega el boton para minimizar-->
 								<i class="fas fa-bars"></i>
 							</a>
+							<img src="../../images/logoinnovahack.png" height="20" width="100" align="center">
 						</div>
 						<ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-							<li class="nav-item">
-								<a href="#" class="nav-link logout" data-toggle = "modal" data-target = "#cerrar">
-									<span class="fas fa-power-off text-danger"></span>
-									Salir
-								</a>
-							</li>
+							<li class="nav-item"><a href="#" class="nav-link logout" data-toggle = "modal" data-target = "#cerrar"><span class="fas fa-power-off text-danger"></span> Salir</a></li><!--Se utiliza para salir del sistema-->	
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</header>
+		<div class="modal fade" id="cerrar">
+			<div class="modal-dialog" role = "document">
+				<div class="modal-content text-center text-warning">
+					<div class="modal-body">
+						<i class="fas fa-info-circle fa-5x"></i>
+						<h1 class="modal-title text-center text-dark" id="cerrar">Estas seguro ?</h1>
+						<p class="text-center text-dark">Quieres salir del sistema y finalizar la sesión actual</p>
+						<a href="../modulosc/login/cerrarsessionAdministrador.php" class="btn btn-primary">si, Salir</a>
+						<a class="btn btn-danger text-white" data-dismiss = "modal">Cancelar</a>	
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	<footer class="main-footer">
+		<div class="conainer-fluid">
+			<div class="row">
+				<div class="col-sm-10">
+					<p>El mejor modo de predecir el futuro es inventandolo. –Alan Key</p>
+				</div>
+				<div class="col-sm-2 text-right">
+					<p>Equipo Mundo Virtual</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="../../librerias/malihu/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="../../librerias/front.js"></script>
 </body>
 </html>

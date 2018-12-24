@@ -1,3 +1,4 @@
+
 <?php
 	require_once '../../modulosc/login/security.php';//Clase para verificar session
 	verificar_session(); /*Es la funcion que tien security para verificar si ya iniciaron session o no para redireccionarlo al index.html*/
@@ -80,7 +81,6 @@
 					</div>
 				</div>
 			</nav>
-
 		</header>
 		<div class="modal fade" id="cerrar">
 			<div class="modal-dialog" role = "document">
@@ -125,10 +125,10 @@
 			</div>
 		</section>
 		<footer class="main-footer">
-			<div class="conainer-fluid">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-10">
-						<p>La gente positiva cambia el mundo, mientras que la negativa lo mantiene como está –Alan Key</p>
+						<p>El mejor modo de predecir el futuro es inventandolo. –Alan Key</p>
 					</div>
 					<div class="col-sm-2 text-right">
 						<p>Equipo Mundo virtual</p>
