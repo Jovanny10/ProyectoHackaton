@@ -1,6 +1,7 @@
 <?php 
 	require_once '../modulosc/login/security.php';//Clase para verificar si está iniciada la session o no
 	verificar_session();//Es una funcion de la clase security para verificar si ya iniciaron session o no para redireccionarlo al index
+	require_once '../modulosc/paginas.php';/*Nos permite utilizar un switch para redireccionar páginas*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,13 +36,13 @@
 	<script type="text/javascript" src="../../librerias/bootstrap.js"></script>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../../css/normalize.css"><!--Nos permite tener un estilo en todos los navegadores-->
-<!--===============================================================================================-->
+<!--========================================================================= ======================-->
 </head>
 <body>
 	<nav class="side-navbar">
 		<div class="side-navbar-wrapper">
 			<div class="sidenav-header-inner text-center p-3"><div class="fas fa-user-circle fa-3x"></div>
-				<h3 class="h3">Miranda</h3><span class="text-danger">Administrador</span>
+				<h3 class="h3"><?php echo $_SESSION['nombre']; ?></h3><span class="text-danger">Administrador</span>
 			</div>
 			<div class="sidenav-header-logo">
 				<a href="index.php" class="brand-small text-center"><strong><i class="fas fa-home"></i></strong></a>
@@ -50,12 +51,12 @@
 		<div class="main-menu">
 			<h5 class="sidenav-heading">MENÚ</h5>
 			<li>
-				<a href="#" aria-expanded = "false">
+				<a href="index.php?carga=1" aria-expanded = "false">
 					<i class="fas fa-user-tie"></i>Perfil
 				</a>
 			</li>
 			<li>
-            	<a href="#" aria-expanded = "false">
+            	<a href="index.php?carga=2" aria-expanded = "false">
             		<i class="fas fa-book-open"></i>Catálogo proyectos
             	</a>
             </li>
@@ -94,11 +95,12 @@
 							<img src="../../images/logoinnovahack.png" height="20" width="100" align="center">
 						</div>
 						<ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-							<li class="nav-item"><a href="#" class="nav-link logout" data-toggle = "modal" data-target = "#cerrar"><span class="fas fa-power-off text-danger"></span> Salir</a></li><!--Se utiliza para salir del sistema-->	
+							<li class="nav-item"><a href="../../modulosc/login/cerrarsession.php" class="nav-link logout" data-toggle = "modal" data-target = "#cerrar"><span class="fas fa-power-off text-danger"></span> Salir</a></li><!--Se utiliza para salir del sistema-->	
 						</ul>
 					</div>
 				</div>
 			</nav>
+
 		</header>
 		<div class="modal fade" id="cerrar">
 			<div class="modal-dialog" role = "document">
@@ -107,25 +109,54 @@
 						<i class="fas fa-info-circle fa-5x"></i>
 						<h1 class="modal-title text-center text-dark" id="cerrar">Estas seguro ?</h1>
 						<p class="text-center text-dark">Quieres salir del sistema y finalizar la sesión actual</p>
-						<a href="../modulosc/login/cerrarsessionAdministrador.php" class="btn btn-primary">si, Salir</a>
-						<a class="btn btn-danger text-white" data-dismiss = "modal">Cancelar</a>	
+						<a class="btn btn-primary" href= "../../modulosc/login/cerrarsession.php">si, Salir</a>
+						<a class="btn btn-danger text-white" data-dismiss="modal">Cancelar</a>	
+					</div>
+				</div>
+			</div>	
+		</div>
+		<section class="dashboard-counts section-padding">
+			<div class="container-fluid">
+				<div class="right_col" role="main">
+					<?php 
+						if(isset($_GET["carga"])){
+							$consulta = $_GET["carga"];
+							require_once '../modulosc/paginas.php';
+							$principal = new paginas();
+							$principal->cargarpaginas($consulta);
+						}else{
+					?>
+					<div class="row justify-content-center" id="bienvenido">
+						<div class="col-md-10">
+							<div class="jumbotron jumbotron-fluid">
+								<div class="container">
+									<h1 class="display-4 text-center">Bienvenid@ <?php echo $_SESSION['nombre']; ?></h1>
+									<p class="lead">
+										Esta es tu portada principal, en donde podrás visualizar tu perfil, registro de proyecto, estado del proyecto donde podrás ver los integrantes de tu equipo, participa y gana!!!
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php 
+						}
+					?>
+				</div>
+			</div>
+		</section>
+		<footer class="main-footer">
+			<div class="conainer-fluid">
+				<div class="row">
+					<div class="col-sm-10">
+						<p>El mejor modo de predecir el futuro es inventándolo. –Alan Key</p>
+					</div>
+					<div class="col-sm-2 text-right">
+						<p>Equipo Mundo virtual</p>
 					</div>
 				</div>
 			</div>
-		</div>
+		</footer>
 	</div>
-	<footer class="main-footer">
-		<div class="conainer-fluid">
-			<div class="row">
-				<div class="col-sm-10">
-					<p>El mejor modo de predecir el futuro es inventandolo. –Alan Key</p>
-				</div>
-				<div class="col-sm-2 text-right">
-					<p>Equipo Mundo Virtual</p>
-				</div>
-			</div>
-		</div>
-	</footer>
 	<script type="text/javascript" src="../../librerias/malihu/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script type="text/javascript" src="../../librerias/front.js"></script>
 </body>

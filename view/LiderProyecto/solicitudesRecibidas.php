@@ -5,6 +5,6 @@
 	<title>Solicitudes</title>
 </head>
 <body>
-	<h1>Solicitudes</h1>
+	<h1>Mis solicitudes recibidas</h1>
 </body>
 </html>

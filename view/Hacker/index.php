@@ -43,7 +43,7 @@
 	<nav class="side-navbar">
 		<div class="side-navbar-wrapper">
 			<div class="sidenav-header-inner text-center p-3"><div class="fas fa-user-circle fa-3x"></div>
-			    <h3 class="h3"><?php echo $_SESSION['nombre'] ?></h3><span class="text-danger">Hacker</span>	
+			    <h3 class="h3"><?php echo $_SESSION['nombre']; ?></h3><span class="text-danger">Hacker</span>	
 			</div>
 			<div class="sidenav-header-logo"><a href="index.php" class="brand-small text-center"> <strong><i class="fas fa-home"></i></strong></a></div>
 		</div>
@@ -51,14 +51,17 @@
 			<h5 class="sidenav-heading">Menú</h5>
 			<ul id="side-main-menu" class="side-menu list-unstyled">
 				<li>
-					<a href="index.php?carga=1" aria-expanded = "false"><i class="fas fa-user-cog"></i>Mi perfil</a>
+					<a href="index.php?carga=4" aria-expanded = "false"><i class="fas fa-user-cog"></i>Mi perfil</a>
 				</li>
 				<h5 class="sidenav-heading">PROYECTOS</h5>
 				<li>
-					<a href="index.php?carga=2" aria-expanded = "false"><i class="fas fa-folder-open"></i>Registro proyecto</a>
+					<a href="index.php?carga=5" aria-expanded = "false"><i class="fas fa-folder-open"></i>Catálogo de proyectos</a>
 				</li>
 				<li>
-					<a href="index.php?carga=3" aria-expanded="false"><i class="fas fa-bell"></i> Solicitudes <h5 style="display: inline;"><span class="badge badge-pill badge-danger">8</span></h5></a>
+					<a href="index.php?carga=6" aria-expanded = "false"><i class="fas fa-folder-open"></i>Mis proyectos</a>
+				</li>
+				<li>
+					<a href="index.php?carga=7" aria-expanded="false"><i class="fas fa-bell"></i> Solicitudes <h5 style="display: inline;"><span class="badge badge-pill badge-danger">8</span></h5></a>
 				</li>
 			</ul>
 		</div>
@@ -81,6 +84,7 @@
 					</div>
 				</div>
 			</nav>
+
 		</header>
 		<div class="modal fade" id="cerrar">
 			<div class="modal-dialog" role = "document">
@@ -105,30 +109,30 @@
 							$principal = new paginas();
 							$principal->cargarpagina($consulta);
 						}else{
-						?>
-						<div class="row justify-content-center" id="bienvenido">
-							<div class="col-md-10">
-								<div class="jumbotron jumbotron-fluid">
-									<div class="container">
-										<h2 class="display-4 text-center">Bienvenid@ <?php echo $_SESSION['nombre']; ?></h2>
-										<p class="lead">
-											Esta es tu portada principal, en donde podrás visualizar tu perfil, registro de proyecto, estado del proyecto donde podrás ver los integrantes de tu equipo, participa y gana!!!
-										</p>
-									</div>
+					?>
+					<div class="row justify-content-center" id="bienvenido">
+						<div class="col-md-10">
+							<div class="jumbotron jumbotron-fluid">
+								<div class="container">
+									<h1 class="display-4 text-center">Bienvenid@ <?php echo $_SESSION['nombre']; ?></h1>
+									<p class="lead">
+										Esta es tu portada principal, en donde podrás visualizar tu perfil, registro de proyecto, estado del proyecto donde podrás ver los integrantes de tu equipo, participa y gana!!!
+									</p>
 								</div>
 							</div>
 						</div>
-                      <?php
-					   }
+					</div>
+					<?php 
+						}
 					?>
 				</div>
 			</div>
 		</section>
 		<footer class="main-footer">
-			<div class="container-fluid">
+			<div class="conainer-fluid">
 				<div class="row">
 					<div class="col-sm-10">
-						<p>El mejor modo de predecir el futuro es inventandolo. –Alan Key</p>
+						<p>El mejor modo de predecir el futuro es inventándolo. –Alan Key</p>
 					</div>
 					<div class="col-sm-2 text-right">
 						<p>Equipo Mundo virtual</p>

@@ -1,23 +1,17 @@
 <?php 
 	require_once '../../modulosc/login/security.php';//Clase para verificar session
-	verificar_session();/*Es la funcion que tien security para verificar si ya iniciaron session o no para redireccionarlo al index.html*/
-	/*require_once '../../modulosc/hacker/perfil.php';
-	$controlador = new perfilcontrolador();//Instanciamos el archivo perfil.php de view
-	$id = $_SESSION['id'];
-	$resultado = $controlador->visualizar($id);//Guardamos lo que retorna el controlador en una variable
-	$row = $resultado->fetch_assoc();//Con fetch recorremos para visualizar el resultado*/
-	$id = $_SESSION['id'];
-
+	verificar_session();/*Es la función que tiene security para verificar si ya iniciaron session o no para redireccionarlo al index.html*/
+	$id = $_SESSION['id'];//Traemos el id de la persona en este caso el lider del proyecto
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Mi perfil</title>
-	<link rel="stylesheet" type="text/css" href="../../css/perfil.css">
+	<link rel="stylesheet" href="../../css/perfil.css">
 </head>
 <body>
-	  <div class="row justify-content-center">
+	<div class="row justify-content-center">
 		<div class="col-md-4">
 			<div class="card">
 				<h3 class="card-header text-center bg-dark text-white">Mi perfil</h3>
@@ -244,3 +238,4 @@
 	<script type="text/javascript" src="../../modulosc/liderproyecto/Editarperfil.js"></script>
 </body>
 </html>
+

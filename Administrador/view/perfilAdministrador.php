@@ -1,13 +1,8 @@
-<?php 
-	require_once '../../modulosc/login/security.php';//Clase para verificar session
-	verificar_session();/*Es la función que tiene security para verificar si ya iniciaron session o no para redireccionarlo al index.html*/
-	$id = $_SESSION['id'];//Traemos el id de la persona en este caso el lider del proyecto
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Mi perfil</title>
+	<title>Mi Perfil</title>
 	<link rel="stylesheet" href="../../css/perfil.css">
 </head>
 <body>
@@ -28,7 +23,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="col-md-8">
 			<div class="row justify-content-center">
 				<div class="col-md-10">
@@ -42,11 +36,11 @@
 						</div>
 						<div class="form-group">
 							<label for="#" class="label-control">Apellidos</label>
-							<input type="text" class="form-control" id="Apellidos" name="App" value="" onmousedown="desabilitar();" disabled="">
+							<input type="text" class="form-control" id="Apellidos" name="Apellidos" value="" onmousedown="desabilitar();" disabled="">
 						</div>
 						<div class="form-group">
 							<label for="#" class="label-control">E-mail</label>
-							<input type="text" class="form-control" id="Correos" name="Correos" value="" onmousedown="desabilitar();" disabled="">
+							<input type="text" class="form-control" id="Correo" name="Correo" value="" onmousedown="desabilitar();" disabled="">
 						</div>
 						<div class="form-group">
 							<label for="#" class="label-control">Teléfono</label>
@@ -54,14 +48,14 @@
 						</div>
 						<div class="form-group">
 							<label for="#" class="label-control">Fecha Nacimiento</label>
-							<input type="text" class="form-control" id="nacimiento" name="nacimiento" value="" onmousedown="desabilitar();" disabled="">
+							<input type="text" class="form-control" id="nacimiento" name="nacimiento" value="" onmousedown="desabilitar();">
 						</div>
 						<div class="form-group text-right">
-							<p class="btn btn-primary" data-toggle = "modal" data-target="#Editar"><i class="fas fa-ellipsis-h"></i> Detalles</p>
+							<p class="btn btn-primary" data-toggle = "modal" data-target = "#Editar"><i class="fas fa-ellipsis-h"></i> Detalles</p>
 						</div>
 					</form>
 					<div class="modal fade" id="Editar">
-						<div class="modal-dialog modal-lg" role = document>
+						<div class="modal-dialog modal-lg" role = "document">
 							<div class="modal-content">
 								<form method="POST">
 									<div class="modal-header">
@@ -71,11 +65,11 @@
 										</button>
 									</div>
 									<div class="modal-body">
-										<input type="hidden" class="form-control" id="id" name="id" value="<?php echo $id ?>">
+										<input type="hidden" name="id" class="form-control" id="id" value="<?php echo $id; ?>" >
 										<div class="row">
 											<div class="col-lg-4">
 												<label for="#">Nombre</label>
-												<input type="text" class="form-control" name="nombre1" id="nombre1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
+												<input type="text" class="form-control" name="nombre1" id="nombre1" npaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Apellido paterno</label>
@@ -96,60 +90,27 @@
 												<input type="text" class="form-control" name="telefono" id="telefono" onpaste = "alert('No puedes pegar');return false">
 											</div>
 											<div class="col-lg-4">
-												<label for="#">F-Nacimiento</label>
-												<input type="date" class="form-control" name="fecha1" id="fecha1">
+												<label for="#">Nacimiento</label>
+												<input type="text" class="form-control" name="fecha1" id="fecha1">
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-lg-4">
 												<label for="#">Institución</label>
 												<select id="institucion" class="form-control" name="institucion">
-													<?php 
-														include_once '../../classm/config/conexion.php';
-														$conexion  = new Conexion();
-														$sql = "SELECT `idInstitucion`, `Institucion` FROM `institucion`";
-														$resultado = $conexion->query($sql);
-														while($row = mysqli_fetch_array($resultado)){
-															?>
-														 	<option value="<?php echo $row['institucion']; ?>"><?php echo utf8_encode($row['Institucion']); ?></option>
-															<?php
-														}
-													?>
+													
 												</select>
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Carrera</label>
 												<select id="carrera" class="form-control" name="carrera">
-													<?php 
-														include_once '../../classm/config/conexion.php';
-														$conexion = new Conexion();
-														$sql = "SELECT * FROM `carrera`";
-														$resultado = $conexion->query($sql);
-														while($row = mysqli_fetch_array($resultado)){
-															?>
-															<option value="<?php echo $row['idCarrera'];?>"><?php echo utf8_encode($row['Carrera']); ?></option>
-															<?php
-														}
-
-													?>
+													
 												</select>
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Sexo</label>
 												<select id="sexo" name="sexo" class="form-control">
-													<?php 
-														include_once '../../classm/config/conexion.php';
-														$conexion = new Conexion();
-														$sql = "SELECT * FROM `sexo`";
-														$resultado = $conexion->query($sql);
-														while($row = mysqli_fetch_array($resultado)){
-															?>
-															<option value="<?php echo $row['idSexo']; ?>"><?php echo utf8_encode($row['Sexo']); ?></option>
-															<?php
-														}
-
-
-													?>
+													
 												</select>
 											</div>
 										</div>
@@ -164,24 +125,24 @@
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Habilidad</label>
-												<input type="text" class="form-control" name="habilidad1" id="habilidad1">
+												<input type="text" class="form-control" name="habilidad1" id="habiidad1">
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-lg-4">
 												<label for="#">Hobbie</label>
-												<input type="text" class="form-control" name="hobbie1" id="hobbie1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
+												<input type="text" class="form-control" name="hobbie1" id="hobbie1" onpaste = "alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Playera</label>
 												<select id="playera" name="playera" class="form-control">
-													<option selected="" value="0"> -- Seleccionar -- </option>
+													
 												</select>
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Rol</label>
 												<select id="rol" name="rol" class="form-control">
-													<option selected="" value="0"> -- Seleccionar -- </option>
+													
 												</select>
 											</div>
 										</div>
@@ -193,48 +154,22 @@
 										</div>
 										<div class="row justify-content-center">
 											<div class="col-mg-5">
-												 <div class="informacion">
-											 	
-												 </div>
+												<div class="informacion">
+													
+												</div>
 											</div>
-											
 										</div>
 									</div>
 									<div class="modal-footer">
-										<div class="mCerrar btn btn-default" data-dismiss = "modal">Cerrar</div>
-										<button class="mGuardar btn btn-primary" name="submit" id="Aceptar" type="submit">Guardar</button>
+										
 									</div>
-
 								</form>
 							</div>
 						</div>
-						
 					</div>
-
 				</div>
-				
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		 function sololetras(e) {
-		      key = e.keyCode || e.which;
-		      teclado = String.fromCharCode(key).toLowerCase();
-		      letras = "abcdefghijklmnñopqrstuvwxyzáéíóú ";
-		      especiales = "8-9-32-37-38-46-164";
-		      teclado_especial = false;
-		      for (var i in especiales) {
-		          if (key == especiales[i]) {
-		              teclado_especial = true;
-		              break;
-		          }
-		      }
-		      if (letras.indexOf(teclado) == -1 && !teclado_especial) {
-		          return false;
-		      }
-         }
-	</script>
-	<script type="text/javascript" src="../../modulosc/liderproyecto/visualizar.js"></script>
-	<script type="text/javascript" src="../../modulosc/liderproyecto/Editarperfil.js"></script>
 </body>
 </html>
