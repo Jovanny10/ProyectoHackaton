@@ -37,6 +37,13 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../../css/normalize.css"><!--Nos permite tener un estilo en todos los navegadores-->
 <!--========================================================================= ======================-->
+	<!--Librería de datatable-->
+	<link rel="stylesheet" href="../../librerias/datatable/datatables.min.css">
+	<script type="text/javascript" src="../../librerias/datatable/datatables.js"></script>
+<!--========================================================================= ======================-->
+<!--========================================================================= ======================-->
+
+
 </head>
 <body>
 	<nav class="side-navbar">
@@ -61,22 +68,22 @@
             	</a>
             </li>
             <li>
-				<a href="index.php?carga=6" aria-expanded="false"><i class="fas fa-bell"></i> Solicitud Juez <h5 style="display: inline;"><span class="badge badge-pill badge-danger">8</span></h5></a>
+				<a href="index.php?carga=3" aria-expanded="false"><i class="fas fa-bell"></i> Solicitud Juez <h5 style="display: inline;"><span class="badge badge-pill badge-danger">8</span></h5></a>
 			</li>
             <h5 class="sidenav-heading">CONSULTAS</h5>
 			<li><a href="#Monitoreo" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-search"></i>Participantes</a>
               <ul id="Monitoreo" class="collapse list-unstyled ">
-              	  <li><a href="#">Hackers</a></li>
-              	  <li><a href="#">Lider de Proyecto</a></li>
-              	  <li><a href="#">Juez / Mentor</a></li>            
+              	  <li><a href="index.php?carga=4">Hackers</a></li>
+              	  <li><a href="index.php?carga=5">Lider de Proyecto</a></li>
+              	  <li><a href="index.php?carga=6">Juez / Mentor</a></li>            
               </ul>
             </li>
             <h5 class="sidenav-heading">REGISTROS</h5>
             <li><a href="#Registros" aria-expanded = "false" data-toggle = "collapse"><i class="fas fa-file-signature"></i>Registros</a>
               <ul id="Registros" class="collapse list-unstyled">
-              	  <li><a href="#">Hackaton</a></li>
-              	  <li><a href="#">Vertical</a></li>
-              	  <li><a href="#">Rúbricas</a></li>
+              	  <li><a href="7">Hackaton</a></li>
+              	  <li><a href="8">Vertical</a></li>
+              	  <li><a href="9">Rúbricas</a></li>
               </ul>	 
             </li>
             <h5 class="sidenav-heading">EVALUACIÓN</h5>
@@ -95,7 +102,7 @@
 							<img src="../../images/logoinnovahack.png" height="20" width="100" align="center">
 						</div>
 						<ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-							<li class="nav-item"><a href="../../modulosc/login/cerrarsession.php" class="nav-link logout" data-toggle = "modal" data-target = "#cerrar"><span class="fas fa-power-off text-danger"></span> Salir</a></li><!--Se utiliza para salir del sistema-->	
+							<li class="nav-item"><a href="#" class="nav-link logout" data-toggle = "modal" data-target = "#cerrar"><span class="fas fa-power-off text-danger"></span> Salir</a></li><!--Se utiliza para salir del sistema-->	
 						</ul>
 					</div>
 				</div>
@@ -109,7 +116,7 @@
 						<i class="fas fa-info-circle fa-5x"></i>
 						<h1 class="modal-title text-center text-dark" id="cerrar">Estas seguro ?</h1>
 						<p class="text-center text-dark">Quieres salir del sistema y finalizar la sesión actual</p>
-						<a class="btn btn-primary" href= "../../modulosc/login/cerrarsession.php">si, Salir</a>
+						<a class="btn btn-primary" href= "../modulosc/login/cerrarsessionAdministrador.php">si, Salir</a>
 						<a class="btn btn-danger text-white" data-dismiss="modal">Cancelar</a>	
 					</div>
 				</div>

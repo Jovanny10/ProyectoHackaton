@@ -11,7 +11,7 @@
 			$sql = "SELECT * FROM participantes WHERE idPersona ='$id'";
 			$resultado = $conexion->query($sql);
 			$array = $resultado->fetch_assoc();
-			$json = json_encode($array);
+			$json =json_encode($array);
 			return $json;
 		}
 

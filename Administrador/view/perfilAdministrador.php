@@ -1,3 +1,9 @@
+<?php 
+	require_once '../modulosc/login/security.php';/*Clase para verificar session*/
+	verificar_session();/*Es la funcion que tiene security para verificar si ya iniciaron session o no para redireccionarlo 
+	al index*/
+	$id = $_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,10 +52,6 @@
 							<label for="#" class="label-control">Teléfono</label>
 							<input type="text" class="form-control" id="cel" name="cel" value="" onmousedown="desabilitar();" disabled="">
 						</div>
-						<div class="form-group">
-							<label for="#" class="label-control">Fecha Nacimiento</label>
-							<input type="text" class="form-control" id="nacimiento" name="nacimiento" value="" onmousedown="desabilitar();">
-						</div>
 						<div class="form-group text-right">
 							<p class="btn btn-primary" data-toggle = "modal" data-target = "#Editar"><i class="fas fa-ellipsis-h"></i> Detalles</p>
 						</div>
@@ -73,11 +75,11 @@
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Apellido paterno</label>
-												<input type="text" class="form-control" name="App" id="App">
+												<input type="text" class="form-control" name="App1" id="App1">
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Apellido materno</label>
-												<input type="text" class="form-control" name="Apm" id="Apm">
+												<input type="text" class="form-control" name="Apm1" id="Apm1">
 											</div>
 										</div>
 										<div class="row">
@@ -87,69 +89,7 @@
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Celular</label>
-												<input type="text" class="form-control" name="telefono" id="telefono" onpaste = "alert('No puedes pegar');return false">
-											</div>
-											<div class="col-lg-4">
-												<label for="#">Nacimiento</label>
-												<input type="text" class="form-control" name="fecha1" id="fecha1">
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-lg-4">
-												<label for="#">Institución</label>
-												<select id="institucion" class="form-control" name="institucion">
-													
-												</select>
-											</div>
-											<div class="col-lg-4">
-												<label for="#">Carrera</label>
-												<select id="carrera" class="form-control" name="carrera">
-													
-												</select>
-											</div>
-											<div class="col-lg-4">
-												<label for="#">Sexo</label>
-												<select id="sexo" name="sexo" class="form-control">
-													
-												</select>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-lg-4">
-												<label for="#">Facebook</label>
-												<input type="text" class="form-control" name="facebook" id="facebook" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
-											</div>
-											<div class="col-lg-4">
-												<label for="#">Twitter</label>
-												<input type="text" class="form-control" name="twitter1" id="twitter1" onpaste = "alert('No puedes pegar');return false">
-											</div>
-											<div class="col-lg-4">
-												<label for="#">Habilidad</label>
-												<input type="text" class="form-control" name="habilidad1" id="habiidad1">
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-lg-4">
-												<label for="#">Hobbie</label>
-												<input type="text" class="form-control" name="hobbie1" id="hobbie1" onpaste = "alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
-											</div>
-											<div class="col-lg-4">
-												<label for="#">Playera</label>
-												<select id="playera" name="playera" class="form-control">
-													
-												</select>
-											</div>
-											<div class="col-lg-4">
-												<label for="#">Rol</label>
-												<select id="rol" name="rol" class="form-control">
-													
-												</select>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-lg-4">
-												<label for="#">Psw</label>
-												<input type="text" class="form-control" name="psw1" id="psw1">
+												<input type="text" class="form-control" name="telefono1" id="telefono1" onpaste = "alert('No puedes pegar');return false">
 											</div>
 										</div>
 										<div class="row justify-content-center">
@@ -161,7 +101,8 @@
 										</div>
 									</div>
 									<div class="modal-footer">
-										
+										<div class="mCerrar btn btn-default" data-dismiss = "modal">Cerrar</div>
+										<button class="mGuardar btn btn-primary" name="submit" id="Aceptar" type="submit">Guardar</button>
 									</div>
 								</form>
 							</div>
@@ -171,5 +112,25 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		 function sololetras(e) {
+		      key = e.keyCode || e.which;
+		      teclado = String.fromCharCode(key).toLowerCase();
+		      letras = "abcdefghijklmnñopqrstuvwxyzáéíóú ";
+		      especiales = "8-9-32-37-38-46-164";
+		      teclado_especial = false;
+		      for (var i in especiales) {
+		          if (key == especiales[i]) {
+		              teclado_especial = true;
+		              break;
+		          }
+		      }
+		      if (letras.indexOf(teclado) == -1 && !teclado_especial) {
+		          return false;
+		      }
+         }
+	</script>
+	<script type="text/javascript" src="../modulosc/perfil/visualizarAdministrador.js"></script>
+	<script type="text/javascript" src="../modulosc/perfil/EditarAdmin.js"></script>
 </body>
 </html>
