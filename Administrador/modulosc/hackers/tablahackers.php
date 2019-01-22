@@ -9,8 +9,8 @@ $tabla = "";
 $id = 1;
 while($row = mysqli_fetch_array($registro)){
 	$detalles = "<p class = 'text-center'><i class = 'fas fa-ellipsis-h'></i><p>";
-	$editar  = '<a href=\"#\" class=\"btn btn-primary\"><i class=\"fas fa-pencil-alt\" aria-hidden=\"true\"></i></a>';
-	$eliminar = '<a href=\"#\" class=\"btn btn-danger\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></a>';
+	$editar  = '<a href=\"#\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#editar\"><i class=\"fas fa-pencil-alt\" aria-hidden=\"true\"></i></a>';
+	$eliminar = '<a href=\"#\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#eliminar\"><i class=\"fas fa-trash-alt\" aria-hidden=\"true\"></i></a>';
 
 	$tabla.='{
 				"id":"'.$id.'",
