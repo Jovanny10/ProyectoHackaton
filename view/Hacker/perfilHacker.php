@@ -38,6 +38,7 @@
 		<div class="col-md-8">
 			<div class="row justify-content-center">
 				<div class="col-md-10">
+<!--==========================================FORMULARIO PERFIL================================================-->
 					<form id="formulario_perfil">
 						<div class="form-group">
 							<h2>Datos personales</h2>
@@ -48,7 +49,7 @@
 						</div>
 						<div class="form-group">
 							<label for="#" class="label-control">Apellidos</label>
-							<input type="text" class="form-control" id="Apellidos" name="App" value="" onmousedown="desabilitar();" disabled="">
+							<input type="text" class="form-control" id="Apellidos" name="Apellidos" value="" onmousedown="desabilitar();" disabled="">
 						</div>
 						<div class="form-group">
 							<label for="#" class="label-control">E-mail</label>
@@ -66,6 +67,8 @@
 							<p class="btn btn-primary" data-toggle = "modal" data-target="#Editar"><i class="fas fa-ellipsis-h"></i> Detalles</p>
 						</div>
 					</form>
+<!--==========================================FIN FORMULARIO PERFIL================================================-->
+<!--==========================================MODAL EDITAR================================================-->
 					<div class="modal fade" id="Editar">
 						<div class="modal-dialog modal-lg" role = document>
 							<div class="modal-content">
@@ -85,11 +88,11 @@
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Apellido paterno</label>
-												<input type="text" class="form-control" name="App" id="App">
+												<input type="text" class="form-control" name="App1" id="App">
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Apellido materno</label>
-												<input type="text" class="form-control" name="Apm" id="Apm">
+												<input type="text" class="form-control" name="Apm1" id="Apm">
 											</div>
 										</div>
 										<div class="row">
@@ -113,11 +116,11 @@
 													<?php 
 														include_once '../../classm/config/conexion.php';
 														$conexion  = new Conexion();
-														$sql = "SELECT `idInstitucion`, `Institucion` FROM `institucion`";
+														$sql = "SELECT * FROM `institucion`";
 														$resultado = $conexion->query($sql);
 														while($row = mysqli_fetch_array($resultado)){
 															?>
-														 	<option value="<?php echo $row['institucion']; ?>"><?php echo utf8_encode($row['Institucion']); ?></option>
+														 	<option value="<?php echo $row['institucion']; ?> selected = 'selected'" id=institucion><?php echo utf8_encode($row['Institucion']); ?></option>
 															<?php
 														}
 													?>
@@ -215,6 +218,7 @@
 							</div>
 						</div>		
 					</div>
+<!--==========================================FIN MODAL EDITAR================================================-->
 				</div>
 			</div>
 		</div>
