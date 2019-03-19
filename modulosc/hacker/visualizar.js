@@ -1,4 +1,4 @@
-$(document.ready(function(){
+$(function(){
 	visualizarHacker();
 })
 
@@ -13,9 +13,9 @@ function visualizarHacker(){
 	})
 
 	.done(function(resp){
-		var objeto = JSON.parse(resp);
+		alert(resp[Nombre]);
 /*=================VISUALIZAR========================*/
-		$('#Nombre').val(objeto.Nombre);
+		$('#nombre').val(objeto.Nombre);
 		Apellidos1 = objeto.App+" "+objeto.Apm;
 		$('#Apellidos').val(Apellidos1);
 		$('#Correos').val(objeto.Email);
@@ -24,10 +24,10 @@ function visualizarHacker(){
 /*=================FIN VISUALIZAR========================*/
 /*=================EDITAR========================*/	
 		$('#nombre1').val(objeto.Nombre);
-		$('#App').val(objeto.App);
-		$('#Apm').val(objeto.Apm);
+		$('#App1').val(objeto.App);
+		$('#Apm1').val(objeto.Apm);
 		$('#email1').val(objeto.Email);
-		$('#telefono').val(objeto.Celular);
+		$('#telefono1').val(objeto.Celular);
 		$('#fecha1').val(objeto.FNacimiento);
 		$('#facebook1').val(objeto.Facebook);
 		$('#twitter1').val(objeto.Twitter);

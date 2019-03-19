@@ -3,5 +3,5 @@
 	 require_once '../../classm/hacker.php';
 	 $controlador  = new hacker();
 	 $resultado = $controlador->VisualizarPerfil($id);
-	 echo $resultado;
+	 print_r( $resultado);
 ?>

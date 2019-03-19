@@ -1,7 +1,7 @@
 <?php 
-require_once '../../classm/hacker.php';
-$resultado = new hacker();
-$registro = $resultado->Visualizarhackers();
+require_once '../../classm/juez.php';
+$resultado = new Juez();
+$registro = $resultado->VisualizarJuez();
 $tabla = "";
 
 $id = 1;

@@ -6,6 +6,7 @@
 <body>
 	<div class="row justify-content-center">
 		<div class="col-md-10">
+			<div class="text-center h1">Hackers</div>
 			<table id="hackers" class="table table-hover table-responsive-sm">
 				<thead class="thead-light">
 					<tr>
@@ -14,7 +15,7 @@
 						<th class="text-dark">Email</th>
 						<th class="text-dark">Celular</th>
 						<th class="text-dark text-center">Detalles</th>
-						<th class="text-dark">acciones</th>
+						<th class="text-dark">Acciones</th>
 					</tr>
 				</thead>
 				<tbody>

@@ -8,11 +8,10 @@
 		
 		public function VisualizarPerfil($id){
 			$conexion = new Conexion(); 
-			$sql = "SELECT * FROM participantes WHERE idPersona ='$id'";
+			$sql = "SELECT `idPersona`, `Nombre`, `App`, `Apm`, `Email`, `Psw`, `Celular`, `FNacimiento`, `Facebook`, `Twitter`, `Habilidad`, `Hobbie`, `idInstitucion`, `Institucion`, `idCarrera`, `Carrera`, `idTallaPlayera`, `Talla`, `idSexo`, `Sexo` FROM `vistaparticipantes` WHERE `idPersona` = '$id'";
 			$resultado = $conexion->query($sql);
 			$array = $resultado->fetch_assoc();
-			$json =json_encode($array);
-			return $json;
+			return $array; 	
 		}
 
 		public function EditarPerfil($id,$nombre,$apellidos,$email,$cel,$fecha){
@@ -23,4 +22,8 @@
 			$conexion->cerrar();
 		}
 	}
+
+
+	$nuevo = new hacker();
+	$nuevo->VisualizarPerfil(1);
 ?>

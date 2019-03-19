@@ -88,11 +88,11 @@
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Apellido paterno</label>
-												<input type="text" class="form-control" name="App1" id="App">
+												<input type="text" class="form-control" name="App1" id="App1">
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Apellido materno</label>
-												<input type="text" class="form-control" name="Apm1" id="Apm">
+												<input type="text" class="form-control" name="Apm1" id="Apm1">
 											</div>
 										</div>
 										<div class="row">
@@ -102,7 +102,7 @@
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Celular</label>
-												<input type="text" class="form-control" name="telefono" id="telefono" onpaste = "alert('No puedes pegar');return false">
+												<input type="text" class="form-control" name="telefono1" id="telefono1" onpaste = "alert('No puedes pegar');return false">
 											</div>
 											<div class="col-lg-4">
 												<label for="#">F-Nacimiento</label>
@@ -120,7 +120,7 @@
 														$resultado = $conexion->query($sql);
 														while($row = mysqli_fetch_array($resultado)){
 															?>
-														 	<option value="<?php echo $row['institucion']; ?> selected = 'selected'" id=institucion><?php echo utf8_encode($row['Institucion']); ?></option>
+														 	<option value="<?php echo $row['institucion']; ?>" selected id=institucion><?php echo utf8_encode($row['Institucion']); ?></option>
 															<?php
 														}
 													?>
@@ -165,7 +165,7 @@
 										<div class="row">
 											<div class="col-lg-4">
 												<label for="#">Facebook</label>
-												<input type="text" class="form-control" name="facebook" id="facebook" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
+												<input type="text" class="form-control" name="facebook" id="facebook1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Twitter</label>
@@ -241,7 +241,7 @@
 		      }
          }
 	</script>
-	<script type="text/javascript" src="../../modulosc/liderproyecto/visualizar.js"></script>
-	<script type="text/javascript" src="../../modulosc/liderproyecto/Editarperfil.js"></script>
+	<script type="text/javascript" src="../../modulosc/hacker/visualizar.js"></script>
+	<script type="text/javascript" src="../../modulosc/hacker/Editarperfil.js"></script>
 </body>
 </html>

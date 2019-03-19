@@ -1,7 +1,7 @@
 <?php 
-require_once '../../classm/hacker.php';
-$resultado = new hacker();
-$registro = $resultado->Visualizarhackers();
+require_once '../../classm/lider.php';
+$resultado = new lider();
+$registro = $resultado->Visualizarlider();
 $tabla = "";
 
 $id = 1;
@@ -24,4 +24,5 @@ while($row = mysqli_fetch_array($registro)){
 	//Eliminamos la coma que sobra
 	$tabla= substr($tabla,0, strlen($tabla)-1); 
 	echo '{"data":['.$tabla.']}'; 
+
 ?>
