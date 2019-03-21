@@ -25,6 +25,16 @@
 				case '6':
 					require_once 'juez.php';
 					break;
+				case '7':
+					require_once 'hackaton.php';
+					break;
+				case '8':
+					require_once 'vertical.php';
+					break;
+				case '9':
+					require_once 'rubricas.php';
+					break;
+
 			}
 		}
 	}

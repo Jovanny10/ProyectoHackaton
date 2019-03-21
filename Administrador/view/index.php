@@ -74,16 +74,16 @@
 			<li><a href="#Monitoreo" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-search"></i>Participantes</a>
               <ul id="Monitoreo" class="collapse list-unstyled ">
               	  <li><a href="index.php?carga=4">Hackers</a></li>
-              	  <li><a href="index.php?carga=5">Lider de Proyecto</a></li>
+              	  <li><a href="index.php?carga=5">Lider del Proyecto</a></li>
               	  <li><a href="index.php?carga=6">Juez / Mentor</a></li>            
               </ul>
             </li>
             <h5 class="sidenav-heading">REGISTROS</h5>
             <li><a href="#Registros" aria-expanded = "false" data-toggle = "collapse"><i class="fas fa-file-signature"></i>Registros</a>
               <ul id="Registros" class="collapse list-unstyled">
-              	  <li><a href="7">Hackaton</a></li>
-              	  <li><a href="8">Vertical</a></li>
-              	  <li><a href="9">Rúbricas</a></li>
+              	  <li><a href="index.php?carga=7">Hackaton</a></li>
+              	  <li><a href="index.php?carga=8">Vertical</a></li>
+              	  <li><a href="index.php?carga=9">Rúbricas</a></li>
               </ul>	 
             </li>
             <h5 class="sidenav-heading">EVALUACIÓN</h5>
