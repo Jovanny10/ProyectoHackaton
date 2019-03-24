@@ -56,6 +56,7 @@
 							<p class="btn btn-primary" data-toggle = "modal" data-target = "#Editar"><i class="fas fa-ellipsis-h"></i> Detalles</p>
 						</div>
 					</form>
+<!--===================================EDITAR============================================================-->
 					<div class="modal fade" id="Editar">
 						<div class="modal-dialog modal-lg" role = "document">
 							<div class="modal-content">
@@ -71,28 +72,32 @@
 										<div class="row">
 											<div class="col-lg-4">
 												<label for="#">Nombre</label>
-												<input type="text" class="form-control" name="nombre1" id="nombre1" npaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
+												<input type="text" class="form-control" name="nombre1" id="nombre1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Apellido paterno</label>
-												<input type="text" class="form-control" name="App1" id="App1">
+												<input type="text" class="form-control" name="App1" id="App1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Apellido materno</label>
-												<input type="text" class="form-control" name="Apm1" id="Apm1">
+												<input type="text" class="form-control" name="Apm1" id="Apm1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-lg-4">
 												<label for="#">E-mail</label>
-												<input type="text" class="form-control" name="email1" id="email1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
+												<input type="text" class="form-control" name="email1" id="email1" onpaste="alert('No puedes pegar');return false">
 											</div>
 											<div class="col-lg-4">
 												<label for="#">Celular</label>
-												<input type="text" class="form-control" name="telefono1" id="telefono1" onpaste = "alert('No puedes pegar');return false">
+												<input type="text" class="form-control" name="telefono1" id="telefono1" onpaste = "alert('No puedes pegar');return false" onkeypress="return solonumeros(event)">
+											</div>
+											<div class="col-lg-4">
+												<label for="#">Psw</label>
+												<input type="text" class="form-control" name="psw" id="psw" onpaste = "alert('No puedes pegar');return false" onkeypress="return contraseña(event);">
 											</div>
 										</div>
-										<div class="row justify-content-center">
+										<div class="row justify-content-center m-3">
 											<div class="col-mg-5">
 												<div class="informacion">
 													
@@ -108,6 +113,7 @@
 							</div>
 						</div>
 					</div>
+<!--======================================FIN EDITAR=========================================================-->
 				</div>
 			</div>
 		</div>
@@ -128,7 +134,40 @@
 		      if (letras.indexOf(teclado) == -1 && !teclado_especial) {
 		          return false;
 		      }
-         }
+        }
+
+        function contraseña(e) {
+		      key = e.keyCode || e.which;
+		      teclado = String.fromCharCode(key).toLowerCase();
+		      letras = "abcdefghijklmnñopqrstuvwxyz1234567890._-@";
+		      especiales = "9-32-37-38-46-164";
+		      teclado_especial = false;
+		      for (var i in especiales) {
+		          if (key == especiales[i]) {
+		              teclado_especial = true;
+		              break;
+		          }
+		      }
+		      if (letras.indexOf(teclado) == -1 && !teclado_especial) {
+		          return false;
+		      }
+        }
+
+        function solonumeros(e) {
+		      key = e.keyCode || e.which;
+		      teclado = String.fromCharCode(key);
+		      numero = "0123456789";
+		      especiales = "8-37-38-46-27";
+		      teclado_especial = false;
+		      for (var i in especiales) {
+		          if (key == especiales[i]) {
+		              teclado_especial = true;
+		          }
+		      }
+		      if (numero.indexOf(teclado) == -1 && !teclado_especial) {
+		          return false;
+		      }
+       }
 	</script>
 	<script type="text/javascript" src="../modulosc/perfil/visualizarAdministrador.js"></script>
 	<script type="text/javascript" src="../modulosc/perfil/EditarAdmin.js"></script>

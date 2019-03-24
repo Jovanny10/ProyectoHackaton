@@ -24,5 +24,7 @@ function visualizarAdministrador1(){
 		$('#email1').val(objeto.correo);
 		$('#cel').val(objeto.telefono);
 		$('#telefono1').val(objeto.telefono);
+
+		$('#psw').val(atob(objeto.pwd));
 	})
 }
