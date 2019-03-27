@@ -11,12 +11,14 @@ function validarPerfilAdmin(){
 			type: 'POST',
 			data:datos,
 			beforeSend:function(respuesta){
-				$('.informacion').html("Cargando...");
+				$('.error').html("Cargando...");
 			}
-		})
+	    })
 		.done(function(resp){
-			$('.informacion').html(resp);
-			visualizar();
-		})
+			$('.error').html(resp);
+			$('.error').fadeTo('slow',.9);
+			$('.error').fadeTo('slow',.0);
+			visualizarAdministrador1();
+		});
 	})
 }

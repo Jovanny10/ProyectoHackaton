@@ -98,8 +98,8 @@
 											</div>
 										</div>
 										<div class="row justify-content-center m-3">
-											<div class="col-mg-5">
-												<div class="informacion">
+											<div class="col-mg-7">
+												<div class="error">
 													
 												</div>
 											</div>
