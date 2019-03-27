@@ -1,5 +1,6 @@
 <?php 
 	if(!empty($_POST)){
+		$usuario = $_POST['id'];
 		if(empty($_POST['nombre1']) || is_numeric($_POST['nombre1']) || strlen($_POST['nombre1']) >= 20){
 			?>
 				<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
@@ -42,7 +43,18 @@
                  </div>
 			<?php
 		}else{
-			
+			require_once '../../classm/administrador.php';
+			$consulta = new Administrador();
+			$contraseña  = base64_encode($_POST['psw']);
+			$modificar = $consulta->Editarperfil($usuario,$_POST['nombre1'],$_POST['App1'],$_POST['Apm1'],$_POST['email1'],$_POST['telefono1'],$contraseña);
+			if($consulta){
+				?>
+					<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+	                       <strong> Registro actualizado</strong>
+	                </div>
+			   <?php
+			}
+
 		}
 	}
 
