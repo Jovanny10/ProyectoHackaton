@@ -7,6 +7,9 @@
 		
 		public function cargarpaginas($pagina){
 			switch ($pagina) {
+				case '0':
+					require_once 'dashboard.php';
+					break;
 				case '1':
 					require_once 'perfilAdministrador.php';
 					break;

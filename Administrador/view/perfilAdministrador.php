@@ -53,7 +53,7 @@
 							<input type="text" class="form-control" id="cel" name="cel" value="" onmousedown="desabilitar();" disabled="">
 						</div>
 						<div class="form-group text-right">
-							<p class="btn btn-primary" data-toggle = "modal" data-target = "#Editar"><i class="fas fa-ellipsis-h"></i> Detalles</p>
+							<p class="btn btn-primary" data-toggle = "modal" data-target = "#Editar"><i class="fas fa-ellipsis-h"></i> Editar</p>
 						</div>
 					</form>
 <!--===================================EDITAR============================================================-->

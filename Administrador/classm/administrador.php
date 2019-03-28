@@ -8,7 +8,7 @@
 	{
 		
 		public function VisualizarPerfil($id){
-			$conexion = new Conexion();
+			$conexion = new Conexion(); 
 			$sql = "SELECT * FROM `administrador` WHERE idAdministrador = '$id'";
 			$resultado = $conexion->query($sql);
 			$array = $resultado->fetch_assoc();
