@@ -11,14 +11,16 @@
 			<table id="juez" class="table table-hover table-responsive-sm">
 				<thead class="thead-light">
 					<tr>
-						<th class="text-dark">#</th>
-						<th class="text-dark">Nombre</th>
-						<th class="text-dark">Email</th>
-						<th class="text-dark">Celular</th>
-						<th class="text-dark text-center">Detalles</th>
-						<th class="text-dark">Acciones</th>
+						<th class="text-white" style="background-color: #061a45">#</th>
+						<th class="text-white" style="background-color: #061a45">Nombre</th>
+						<th class="text-white" style="background-color: #061a45">Email</th>
+						<th class="text-white" style="background-color: #061a45">Celular</th>
+						<th class="text-white text-center" style="background-color: #061a45">Detalles</th>
+						<th class="text-white" style="background-color: #061a45">Acciones</th>
 					</tr>
 				</thead>
+				<tbody class="text-dark">
+				</tbody>
 			</table>
 		</div>
 <!--==========================================MODAL DETALLES================================================-->

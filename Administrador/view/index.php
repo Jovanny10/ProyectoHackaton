@@ -39,6 +39,7 @@
 <!--========================================================================= ======================-->
 	<!--Librería de datatable-->
 	<link rel="stylesheet" href="../../librerias/datatable/datatables.min.css">
+	<link rel="stylesheet" href="../../css/datable.css">
 	<script type="text/javascript" src="../../librerias/datatable/datatables.js"></script>
 <!--========================================================================= ======================-->
 <!--========================================================================= ======================-->

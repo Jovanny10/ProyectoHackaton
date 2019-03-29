@@ -9,7 +9,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mi Perfil</title>
-	<link rel="stylesheet" href="../../css/perfil.css">
 </head>
 <body>
 	<div class="row justify-content-center">

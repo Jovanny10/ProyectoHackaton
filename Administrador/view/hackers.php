@@ -10,15 +10,15 @@
 			<table id="hackers" class="table table-hover table-responsive-sm">
 				<thead class="thead-light">
 					<tr>
-						<th class="text-dark">#</th>
-						<th class="text-dark">Nombre</th>
-						<th class="text-dark">Email</th>
-						<th class="text-dark">Celular</th>
-						<th class="text-dark text-center">Detalles</th>
-						<th class="text-dark">Acciones</th>
+						<th class="text-white" style="background-color: #061a45">#</th>
+						<th class="text-white" style="background-color: #061a45">Nombre</th>
+						<th class="text-white" style="background-color: #061a45">Email</th>
+						<th class="text-white" style="background-color: #061a45">Celular</th>
+						<th class="text-white text-center" style="background-color: #061a45">Detalles</th>
+						<th class="text-white" style="background-color: #061a45" >Acciones</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody class="text-dark">
 				</tbody>
 			</table>
 		</div>
@@ -28,7 +28,7 @@
 				<div class="modal-content">
 					<form method="POST">
 						<div class="modal-header">
-							<h2 class="modal-title"><i class="fas fa-edit"></i> Editar</h2>
+							<h2 class="modal-title"><i class="fas fa-edit"></i> Detalles</h2>
 							<button type="button" class="close" data-dismiss = "modal" aria-label = "Close">
 								<span aria-hidden = "true" class = "text-danger">&times;</span>
 							</button>
