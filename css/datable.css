@@ -3,12 +3,12 @@ table{
 }
 
 /*Ventana modal editar*/
-div#editar div.row div.col-lg-4 input.form-control{
+div#editar div.row div.col-lg-12 input.form-control{
 	border-radius: 5px;
 	border:1px solid #39c;
 }
 
-div#editar div.modal-body div.row div.col-lg-4 input.form-control,select{
+div#editar div.modal-body div.row div.col-lg-12 input.form-control,select{
 	border-radius: 5px;
 	border:1px solid #39c;
 
@@ -23,7 +23,12 @@ div#editar div.modal-footer div.mCerrar{
 	border:1px solid black;
 }
 
-div#detalles div.modal-body div.row div.col-lg-4 input.form-control,select.form-control{
+div#detalles div.modal-body div.row div.col-lg-12 input.form-control,select.form-control{
+	border-radius: 5px;
+	border:1px solid #39c;
+}
+
+div#detalles div.modal-body div.row div.col-lg-6 input.form-control,select.form-control{
 	border-radius: 5px;
 	border:1px solid #39c;
 }

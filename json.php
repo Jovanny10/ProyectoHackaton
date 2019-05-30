@@ -5,12 +5,12 @@
 	<title>Json</title>
 </head>
 <body>
-	<script type="text/javascript">
-		var Datos = '{"nombre":"Ian Alejandro","Apellidos":"Leobardo"}';
-		datos = Json.parse(Datos);
-	alert(datos);
-
-	</script>
+	<div>Hola mundo mi nombre es Jovanny</div>
+	<script>
+	var a= 4;
+	var b = 5;
+	alert(a+b); 
+	alert("Hola")</script>
 </body>
 </html>
 
