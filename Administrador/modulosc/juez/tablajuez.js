@@ -1,8 +1,17 @@
 $(document).ready(function(){
 	tablajuez();
 })
-
-
+/*==========================================DETALLES================================================*/
+function detallesjuez(Nombre,Carrera,Habilidad,Hobbie,Facebook,FNacimiento,Sexo){
+	$('#institucion').val(Nombre);
+	$('#carrera').val(Carrera);
+	$('#habilidad1').val(Habilidad);
+	$('#hobbie1').val(Hobbie);
+	$('#facebook').val(Facebook);
+	$('#fecha1').val(FNacimiento);
+	$('#sexo').val(Sexo);
+}
+/*==========================================FIN DETALLES================================================*/
 function tablajuez(){
 	$("#juez").dataTable({
 		"destroy":true,

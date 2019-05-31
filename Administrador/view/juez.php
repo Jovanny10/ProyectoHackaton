@@ -24,12 +24,12 @@
 			</table>
 		</div>
 <!--==========================================MODAL DETALLES================================================-->
-		<div class="modal fade" id="detalles">
-			<div class="modal-dialog modal-lg" role="document">
+		<div class="modal fade" id="detallesjuez">
+			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<form method="POST">
 						<div class="modal-header">
-							<h2 class="modal-title"><i class="fas fa-edit"></i> Editar</h2>
+							<h2 class="modal-title"><i class="fas fa-edit"></i> Detalles</h2>
 							<button type="button" class="close" data-dismiss = "modal" aria-label = "Close">
 								<span aria-hidden = "true" class = "text-danger">&times;</span>
 							</button>
@@ -37,101 +37,47 @@
 						<div class="modal-body">
 							<input type="hidden" class="form-control" id="id" name="id" value="">
 							<div class="row">
-								<div class="col-lg-4">
-									<label for="#">Nombre</label>
-									<input type="text" class="form-control" name="nombre1" id="nombre1" onpaste= "alert('No puedes pegar');return false">
-								</div>
-								<div class="col-lg-4">
-									<label for="#">Apellido paterno</label>
-									<input type="text" class="form-control" name="App" id="App">
-								</div>
-								<div class="col-lg-4">
-									<label for="#">Apellido materno</label>
-									<input type="text" class="form-control" name="Apm" id="Apm">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-4">
-									<label for="#">E-mail</label>
-									<input type="text" class="form-control" name="email1" id="email1" onpaste="alert('No puedes pegar');return false">
-								</div>
-								<div class="col-lg-4">
-									<label for="#">Celular</label>
-									<input type="text" class="form-control" name="telefono1" id="telefono1" onpaste="alert('No puedes pegar');return false">
-								</div>
-								<div class="col-lg-4">
-									<label for="#">F-Nacimiento</label>
-									<input type="text" class="form-control" name="fecha1" id="fecha1">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-4">
+								<div class="col-lg-12">
 									<label for="#">Institución</label>
-									<select id="institucion" class="form-control" name="institucion">
-									</select>
+									<input type="text" id="institucion" class="form-control" name="institucion" disabled="">
+									</input>
 								</div>
-								<div class="col-lg-4">
+								<div class="col-lg-12">
 									<label for="#">Carrera</label>
-									<select id="carrera" class="form-control" name="carrera">
-										
-									</select>
-								</div>
-								<div class="col-lg-4">
-									<label for="#">Sexo</label>
-									<select id="sexo" name="sexo" class="form-control">
-										
-									</select>
+									<input id="carrera" class="form-control" name="carrera" disabled="">
+									</input>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-lg-4">
-									<label for="#">Facebook</label>
-									<input type="text" class="form-control" name="facebook" id="facebook" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
-								</div>
-								<div class="col-lg-4">
-									<label for="#">Twitter</label>
-									<input type="text" class="form-control" name="twitter1" id="twitter1" onpaste = "alert('No puedes pegar');return false">
-								</div>
-								<div class="col-lg-4">
+								<div class="col-lg-12">
 									<label for="#">Habilidad</label>
-									<input type="text" class="form-control" name="habilidad1" id="habilidad1">
+									<input type="text" class="form-control" name="habilidad1" id="habilidad1" disabled="">
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-4">
+								<div class="col-lg-12">
 									<label for="#">Hobbie</label>
-									<input type="text" class="form-control" name="hobbie1" id="hobbie1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)">
-								</div>
-								<div class="col-lg-4">
-									<label for="#">Playera</label>
-									<select id="playera" name="playera" class="form-control">
-										<option selected="" value="0"> -- Seleccionar -- </option>
-									</select>
-								</div>
-								<div class="col-lg-4">
-									<label for="#">Rol</label>
-									<select id="rol" name="rol" class="form-control">
-										<option selected="" value="0"> -- Seleccionar -- </option>
-									</select>
+									<input type="text" class="form-control" name="hobbie1" id="hobbie1" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)" disabled="">
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-lg-4">
-									<label for="#">Psw</label>
-									<input type="text" class="form-control" name="psw1" id="psw1">
+								<div class="col-lg-12">
+									<label for="#">Facebook</label>
+									<input type="text" class="form-control" name="facebook" id="facebook" onpaste="alert('No puedes pegar');return false" onkeypress="return sololetras(event)" disabled="">
 								</div>
-								<div class="row justify-content-center">
-									<div class="col-mg-5">
-										<div class="informacion">
-											
-										</div>
-									</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-6">
+									<label for="#">F-Nacimiento</label>
+									<input type="text" class="form-control text-center" name="fecha1" id="fecha1" disabled="">
+								</div>
+								<div class="col-lg-6">
+									<label for="#">Sexo</label>
+									<input id="sexo" name="sexo" class="form-control text-center" disabled="">
+									</input>
 								</div>
 							</div>
 						</div>
 						<div class="modal-footer">
-							<div class="mCerrar btn btn-default" data-dismiss = "modal">Cerrar</div>
-							<button class="mGuardar btn btn-primary" name="submit" id="Aceptar" type="submit">Guardar</button>
+							<button class="mCerrar btn btn-primary rounded" data-dismiss = "modal">Cerrar</button>
 						</div>
 					</form>
 				</div>
