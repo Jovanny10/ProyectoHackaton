@@ -1,12 +1,12 @@
 <?php 
 require_once '../../classm/lider.php';
 $resultado = new lider();
-$registro = $resultado->Visualizarlider();
+$registro = $resultado->VisualizarLider();
 $tabla = "";
 
 $id = 1;
 while($row = mysqli_fetch_array($registro)){
-	$detalles = "<p class = 'text-center' data-toggle = 'modal' data-target = '#detalles'><i class = 'fas fa-plus-circle text-dark fa-2x'></i><p>";
+	$detalles = '<a data-toggle=\"modal\" data-target=\"#detalleslider\"><i class=\"fas fa-plus-circle fa-2x\" align=\"center\" aria-hidden=\"true\" onclick=\"detalleslider('."'".$row['Institucion']."','".$row['Carrera']."','".$row['Habilidad']."','".$row['Hobbie']."','".$row['Facebook']."','".$row['FNacimiento']."','".$row['Sexo']."'".')\"></i></a>';
 	$editar  = '<a href=\"#\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#editar\"><i class=\"fa fa-pencil-alt\" aria-hidden=\"true\"></i></a>';
 	$eliminar = '<a href=\"#\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#eliminar\"><i class=\"fas fa-trash-alt\" aria-hidden=\"true\"></i></a>';
 
