@@ -13,6 +13,13 @@
 			$resultado = $conexion->query($sql);
 			return $resultado;
 		}
+
+		public function EliminarHacker($id){
+			$conexion = new Conexion();
+			$sql="DELETE FROM `participantes` WHERE `idPersona`='".$id."'";
+			$resultado=$conexion->query($sql);
+			return $resultado;
+		}
 	}
 
 ?>

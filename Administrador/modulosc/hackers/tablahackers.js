@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	tablaHacker();
 });
-/*==========================================DETALLES================================================*/
+/*==========================================DETALLES HACKER================================================*/
 function detalleshackers(Nombre,Carrera,Habilidad,Hobbie,Facebook,FNacimiento,Sexo){
 	$('#institucion').val(Nombre);
 	$('#carrera').val(Carrera);
@@ -11,7 +11,27 @@ function detalleshackers(Nombre,Carrera,Habilidad,Hobbie,Facebook,FNacimiento,Se
 	$('#fecha1').val(FNacimiento);
 	$('#sexo').val(Sexo);
 }
-/*==========================================FIN DETALLES================================================*/
+/*==========================================FIN DETALLES HACKER================================================*/
+/*==========================================ELIMINAR HACKER================================================*/
+let idEliminar="";
+function eliminarhacker(id){
+	idEliminar=id;
+}
+function eliminandohacker(){
+	$.ajax({
+		url: '../modulosc/hackers/hacker.php',
+		type:'POST',
+		data:{id:idEliminar}
+	})
+	.done(function(resultado){
+		tablaHacker();
+	})
+
+}
+
+
+/*==========================================FIN ELIMINAR HACKER================================================*/
+
 function tablaHacker(){
 	$("#hackers").dataTable({
 		"destroy":true,

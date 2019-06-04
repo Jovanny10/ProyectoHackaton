@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 </head>
 <body>
 	<div class="row justify-content-center">
@@ -206,7 +207,7 @@
 						<i class="fas fa-times-circle fa-5x"></i>
 						<h1 class="modal-title text-center text-dark" id="cerrar">Estas seguro ?</h1>
 						<p class="text-center text-dark">Quiere eliminar el hacker del sistema</p>
-						<a href="#" class="btn btn-primary">si, Aceptar</a>
+						<a href="#" class="btn btn-primary" id="eliminar" data-dismiss="modal" onclick="eliminandohacker()">si, Aceptar</a>
 						<a href="#" class="btn btn-danger text-white" data-dismiss = "modal">Cancelar</a>
 					</div>
 				</div>
