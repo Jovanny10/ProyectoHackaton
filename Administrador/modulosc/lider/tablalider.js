@@ -12,6 +12,26 @@ function detalleslider(Nombre,Carrera,Habilidad,Hobbie,Facebook,FNacimiento,Sexo
 	$('#sexo').val(Sexo);
 }
 /*==========================================FIN DETALLES================================================*/
+/*==========================================ELIMINAR HACKER================================================*/
+let idEliminar="";
+function eliminarlider(id){
+	idEliminar=id;
+}
+function eliminandolider(){
+	$.ajax({
+		url:'../modulosc/lider/lider.php',
+		type:'POST',
+		data:{id:idEliminar}
+	})
+	.done(function(resultado){
+		alert(resultado);
+		tablalider();
+	})
+
+}
+
+
+/*==========================================FIN ELIMINAR HACKER================================================*/
 function tablalider(){
 	$("#lider").dataTable({
 		"destroy":true,
