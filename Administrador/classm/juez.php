@@ -1,7 +1,7 @@
 <?php 
 
 	/**
-	 * 
+	 *ADMINISTRADOR 
 	 */
 
 	require_once 'config/conexion.php';
@@ -14,5 +14,13 @@
 			$resultado = $conexion->query($sql);
 			return $resultado;
 		}
+
+		public function EliminarJuez($id){
+			$conexion = new Conexion();
+			$sql="DELETE FROM `participantes` WHERE `idPersona`='".$id."'";
+			$resultado=$conexion->query($sql);
+			return $resultado;
+		}
+
 	}
 ?>

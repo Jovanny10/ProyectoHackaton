@@ -12,6 +12,26 @@ function detallesjuez(Nombre,Carrera,Habilidad,Hobbie,Facebook,FNacimiento,Sexo)
 	$('#sexo').val(Sexo);
 }
 /*==========================================FIN DETALLES================================================*/
+/*==========================================ELIMINAR JUEZ================================================*/
+let idEliminar="";
+function eliminarjuez(id){
+	idEliminar=id;
+}
+function eliminandojuez(){
+	$.ajax({
+		url: '../modulosc/juez/juez.php',
+		type:'POST',
+		data:{id:idEliminar}
+	})
+	.done(function(resultado){
+		alert(resultado);
+		tablajuez();
+	})
+
+}
+
+
+/*==========================================FIN ELIMINAR JUEZ================================================*/
 function tablajuez(){
 	$("#juez").dataTable({
 		"destroy":true,

@@ -207,7 +207,7 @@
 						<i class="fas fa-times-circle fa-5x"></i>
 						<h1 class="modal-title text-center text-dark" id="cerrar">Estas seguro ?</h1>
 						<p class="text-center text-dark">Quiere eliminar el hacker del sistema</p>
-						<a href="#" class="btn btn-primary">si, Aceptar</a>
+						<a href="#" class="btn btn-primary" onclick="eliminandojuez()" data-dismiss="modal">si, Aceptar</a>
 						<a href="#" class="btn btn-danger text-white" data-dismiss = "modal">Cancelar</a>
 					</div>
 				</div>
