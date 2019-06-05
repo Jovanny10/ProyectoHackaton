@@ -24,7 +24,7 @@
 			</table>
 		</div>
 <!--==========================================MODAL DETALLES================================================-->
-		<div class="modal fade" id="detalleslider">
+		<div class="modal fade" id="detalles">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<form method="POST">
