@@ -12,6 +12,30 @@ function detalleshackers(Nombre,Carrera,Habilidad,Hobbie,Facebook,FNacimiento,Se
 	$('#sexo').val(Sexo);
 }
 /*==========================================FIN DETALLES HACKER================================================*/
+/*==========================================EDITAR HACKER================================================*/
+
+function editarhackers(Id,Correo,Psw,Celular){
+	$('#id').val(Id);
+	$('#correoe').val(Correo);
+	$('#p').val(atob(Psw));
+	$('#celulare').val(Celular);
+}
+
+function editandohackers(){
+	id=$('#id').val();
+	correo=$('#correoe').val();
+	contrasena=$('#p').val();
+	celular=$('#celulare').val();
+	$.ajax({
+		url: '../modulosc/hackers/hacker.php',
+		type:'POST',
+		data:{"ideditar":id,"correo":correo,"contraseña":contrasena,"celular":celular}
+	})
+	.done(function(resultado){
+		alert(resultado);
+	})
+}
+/*==========================================FIN EDITAR HACKER================================================*/
 /*==========================================ELIMINAR HACKER================================================*/
 let idEliminar="";
 function eliminarhacker(id){

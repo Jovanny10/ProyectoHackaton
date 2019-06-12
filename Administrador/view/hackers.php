@@ -88,7 +88,7 @@
 		<div class="modal fade" id="editar">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
-					<form method="POST">
+					<form method="POST" id="GuardarDatosEditar">
 						<div class="modal-header">
 							<h2 class="modal-title"><i class="fas fa-edit"></i> Editar</h2>
 							<button type="button" class="close" data-dismiss = "modal" aria-label = "Close">
@@ -100,26 +100,26 @@
 							<div class="row">
 								<div class="col-lg-12">
 									<label for="#">Correo</label>
-									<input type="text" class="form-control" name="correo" id="correo" onpaste= "alert('No puedes pegar');return false">
+									<input type="text" class="form-control" name="correoe" id="correoe" onpaste= "alert('No puedes pegar');return false">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-lg-12">
 									<label for="#">Contraseña</label>
-									<input type="text" class="form-control" name="pwd" id="pwd" onpaste="alert('No puedes pegar');return false">
+									<input type="text" class="form-control" name="p" id="p" onpaste="alert('No puedes pegar');return false">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-lg-12">
 									<label for="#">Celular</label>
-									<input type="text" id="celular" class="form-control" name="celular">
+									<input type="text" id="celulare" class="form-control" name="celulare">
 									</input>
 								</div>
 							</div>
 						</div>
 						<div class="modal-footer">
 							<div class="mCerrar btn btn-default" data-dismiss = "modal">Cerrar</div>
-							<button class="mGuardar btn btn-primary" name="submit" id="Aceptar" type="submit">Guardar</button>
+							<button class="mGuardar btn btn-primary" name="Aceptar" id="Aceptar" type="submit" onclick="editandohackers()">Guardar</button>
 						</div>
 					</form>
 				</div>
