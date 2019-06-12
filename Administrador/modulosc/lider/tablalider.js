@@ -12,7 +12,31 @@ function detalleslider(Nombre,Carrera,Habilidad,Hobbie,Facebook,FNacimiento,Sexo
 	$('#sexo').val(Sexo);
 }
 /*==========================================FIN DETALLES================================================*/
-/*==========================================ELIMINAR HACKER================================================*/
+/*==========================================EDITAR LIDER================================================*/
+
+function editarlider(Id,Correo,Psw,Celular){
+	$('#id').val(Id);
+	$('#correoe').val(Correo);
+	$('#p').val(atob(Psw));
+	$('#celulare').val(Celular);
+}
+
+function editandolider(){
+	id=$('#id').val();
+	correo=$('#correoe').val();
+	contrasena=$('#p').val();
+	celular=$('#celulare').val();
+	$.ajax({
+		url: '../modulosc/lider/lider.php',
+		type:'POST',
+		data:{"ideditar":id,"correo":correo,"contraseña":contrasena,"celular":celular}
+	})
+	.done(function(resultado){
+		alert(resultado);
+	})
+}
+/*==========================================FIN EDITAR LIDER================================================*/
+/*==========================================ELIMINAR LIDER================================================*/
 let idEliminar="";
 function eliminarlider(id){
 	idEliminar=id;
@@ -27,11 +51,10 @@ function eliminandolider(){
 		alert(resultado);
 		tablalider();
 	})
-
 }
 
 
-/*==========================================FIN ELIMINAR HACKER================================================*/
+/*==========================================FIN ELIMINAR LIDER================================================*/
 function tablalider(){
 	$("#lider").dataTable({
 		"destroy":true,
