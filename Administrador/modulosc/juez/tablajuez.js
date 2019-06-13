@@ -12,6 +12,30 @@ function detallesjuez(Nombre,Carrera,Habilidad,Hobbie,Facebook,FNacimiento,Sexo)
 	$('#sexo').val(Sexo);
 }
 /*==========================================FIN DETALLES================================================*/
+/*==========================================EDITAR JUEZ================================================*/
+
+function editarjuez(Id,Correo,Psw,Celular){
+	$('#id').val(Id);
+	$('#correoe').val(Correo);
+	$('#p').val(atob(Psw));
+	$('#celulare').val(Celular);
+}
+
+function editandojuez(){
+	id=$('#id').val();
+	correo=$('#correoe').val();
+	contrasena=$('#p').val();
+	celular=$('#celulare').val();
+	$.ajax({
+		url: '../modulosc/juez/juez.php',
+		type:'POST',
+		data:{"ideditar":id,"correo":correo,"contraseña":contrasena,"celular":celular}
+	})
+	.done(function(resultado){
+		alert(resultado);
+	})
+}
+/*==========================================FIN EDITAR JUEZ================================================*/
 /*==========================================ELIMINAR JUEZ================================================*/
 let idEliminar="";
 function eliminarjuez(id){
