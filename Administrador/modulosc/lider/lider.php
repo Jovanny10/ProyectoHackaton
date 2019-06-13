@@ -20,12 +20,12 @@
 			$modificar = $instanciar->ActualizarLider($id,$correo,$pswencriptado,$celular);
 			if($instanciar){
 				echo "Registro actualizado";
+			}else{
+				echo "No contiene datos";
 			}
 		}
-	}else{
-		echo "No contiene datos";
 	}
-	if(isset($_POST['id'])){
+	if(!empty($_POST['id'])){
 		if($_POST['id']!=''){
 			$id=$_POST['id'];
 			$eliminar=new lider();

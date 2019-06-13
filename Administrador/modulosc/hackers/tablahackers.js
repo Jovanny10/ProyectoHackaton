@@ -48,6 +48,7 @@ function eliminandohacker(){
 		data:{id:idEliminar}
 	})
 	.done(function(resultado){
+		alert("Eliminado");
 		tablaHacker();
 	})
 
